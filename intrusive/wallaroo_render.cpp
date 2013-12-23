@@ -1,13 +1,13 @@
-#include "iwallaroorender.h"
 #include "../common/interfaces/imodel.h"
 #include "../common/interfaces/igetkeyvalue.h"
+#include "../common/interfaces/irender.h"
 
 #include <wallaroo/registered.h>
 #include <wallaroo/plug.h>
 
 #include <sstream>
 
-class WallarooKeyRenderer :  public IWallarooRender {
+class WallarooKeyRenderer :  public wallaroo::Device , public IRender {
 public:
 	 WallarooKeyRenderer():
 		model( "model", RegistrationToken() )
@@ -27,7 +27,7 @@ public:
 				ss << DELIMITER;
 			ss << model->GetKey(pos);
 		}
-		
+
 		return ss.str();
 	}
 

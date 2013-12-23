@@ -81,6 +81,7 @@ OBJECTS := \
 	$(OBJDIR)/test_pococapsule.o \
 	$(OBJDIR)/test_sauce.o \
 	$(OBJDIR)/test_wallaroo.o \
+	$(OBJDIR)/wallaroo_jsondecoder.o \
 	$(OBJDIR)/wallaroo_render.o \
 
 RESOURCES := \
@@ -159,6 +160,9 @@ $(OBJDIR)/test_sauce.o: ../test_sauce.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/test_wallaroo.o: ../test_wallaroo.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/wallaroo_jsondecoder.o: ../intrusive/wallaroo_jsondecoder.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/wallaroo_render.o: ../intrusive/wallaroo_render.cpp
