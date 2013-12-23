@@ -5,7 +5,6 @@ assert( require 'premake.quickstart' )
 make_solution 'test_ioc_cpp'
 
 includedirs {
-	'./Catch/single_include',
 	'./Hypodermic',
 	'./sauce',
 	'./wallaroo',
