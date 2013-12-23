@@ -32,7 +32,7 @@ ifeq ($(config),debug)
   TARGETDIR  = ../macosx/bin/Debug
   TARGET     = $(TARGETDIR)/libgooglemock.a
   DEFINES   += -DDEBUG -D_DEBUG -DGTEST_USE_OWN_TR1_TUPLE=1
-  INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include
+  INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include -I../picojson
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g -v  -fPIC
   CXXFLAGS  += $(CFLAGS) 
@@ -54,7 +54,7 @@ ifeq ($(config),release)
   TARGETDIR  = ../macosx/bin/Release
   TARGET     = $(TARGETDIR)/libgooglemock.a
   DEFINES   += -DRELEASE -DGTEST_USE_OWN_TR1_TUPLE=1
-  INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include
+  INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include -I../picojson
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -O2 -v  -fPIC
   CXXFLAGS  += $(CFLAGS) 

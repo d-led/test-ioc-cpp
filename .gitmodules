@@ -16,3 +16,6 @@
 [submodule "googlemock"]
 	path = googlemock
 	url = https://github.com/ericsubach/googlemock.git
+[submodule "picojson"]
+	path = picojson
+	url = https://github.com/kazuho/picojson.git

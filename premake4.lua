@@ -9,14 +9,20 @@ includedirs {
 	'./Hypodermic',
 	'./sauce',
 	'./wallaroo',
-	'./PocoCapsule/include'
+	'./PocoCapsule/include',
+	'./picojson'
 }
 
 make_static_lib("googlemock", {"./googlemock/fused-src/gmock-gtest-all.cc"} )
 
 make_static_lib("googlemock-main", {"./googlemock/fused-src/gmock_main.cc"} )
 
-make_console_app('test_ioc_cpp', { './*.cpp' })
+make_console_app('test_ioc_cpp',
+	{
+		'./*.cpp',
+		'./intrusive/*.cpp'
+	}
+)
 
 links {
 	'googlemock',
