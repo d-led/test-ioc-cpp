@@ -1,3 +1,15 @@
 [submodule "premake"]
 	path = premake
 	url = https://github.com/d-led/premake-meta-cpp.git
+[submodule "hypodermic"]
+	path = hypodermic
+	url = https://github.com/karolherbst/hypodermic.git
+[submodule "sauce"]
+	path = sauce
+	url = https://github.com/phs/sauce.git
+[submodule "wallaroo"]
+	path = wallaroo
+	url = https://code.google.com/p/wallaroo/
+[submodule "PocoCapsule"]
+	path = PocoCapsule
+	url = https://github.com/shdwshard/PocoCapsule.git
