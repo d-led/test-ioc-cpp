@@ -99,7 +99,7 @@ TEST_F(wallaroo_hello_world,just_decoder) {
 
 	EXPECT_CALL(*mock_data, Get())
 		.Times(AtLeast(1))
-		.WillRepeatedly(Return(""));
+		.WillRepeatedly(Return("{}"));
 
 	wallaroo_within(catalog)
 	{
@@ -107,5 +107,7 @@ TEST_F(wallaroo_hello_world,just_decoder) {
 	}
 
 	ASSERT_EQ( 0, decoder->Count() );
+	ASSERT_EQ("", decoder->GetKey(22) );
+	ASSERT_EQ("", decoder->GetValue("42") );
 	Mock::VerifyAndClearExpectations(mock_data.get());
 }
