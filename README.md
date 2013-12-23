@@ -13,6 +13,7 @@ The frameworks currently aspiring:
  - [sauce](https://github.com/phs/sauce)
  - [hypodermic](https://code.google.com/p/hypodermic)
  - [pococapsule](http://www.pocomatic.com/docs/whitepapers/pococapsule-cpp/)
+ - [dicpp](https://bitbucket.org/cheez/dicpp/wiki/Home)
 
 Build files are generated using the convenience wrapper for [premake](http://industriousone.com/premake) - [premake-meta-cpp](https://github.com/d-led/premake-meta-cpp)
 
