@@ -13,3 +13,6 @@
 [submodule "PocoCapsule"]
 	path = PocoCapsule
 	url = https://github.com/shdwshard/PocoCapsule.git
+[submodule "Catch"]
+	path = Catch
+	url = https://github.com/philsquared/Catch.git
