@@ -76,6 +76,10 @@ ifeq ($(config),release)
 endif
 
 OBJECTS := \
+	$(OBJDIR)/test_dicpp.o \
+	$(OBJDIR)/test_hypodermic.o \
+	$(OBJDIR)/test_pococapsule.o \
+	$(OBJDIR)/test_sauce.o \
 	$(OBJDIR)/test_wallaroo.o \
 	$(OBJDIR)/wallaroo_render.o \
 
@@ -142,6 +146,18 @@ endif
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 endif
 
+$(OBJDIR)/test_dicpp.o: ../test_dicpp.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/test_hypodermic.o: ../test_hypodermic.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/test_pococapsule.o: ../test_pococapsule.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/test_sauce.o: ../test_sauce.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/test_wallaroo.o: ../test_wallaroo.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
