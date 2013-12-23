@@ -1,5 +1,5 @@
-#include <catch.hpp>
+#include <gtest/gtest.h>
 
-TEST_CASE() {
-	CHECK( false );
+TEST(wallaroo_hello_world,init) {
+	EXPECT_TRUE( false );
 }

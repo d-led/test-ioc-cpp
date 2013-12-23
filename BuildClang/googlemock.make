@@ -28,55 +28,51 @@ ifndef RESCOMP
 endif
 
 ifeq ($(config),debug)
-  OBJDIR     = Debug/obj/Debug/test_ioc_cpp
+  OBJDIR     = Debug/obj/Debug/googlemock
   TARGETDIR  = ../macosx/bin/Debug
-  TARGET     = $(TARGETDIR)/test_ioc_cpp
+  TARGET     = $(TARGETDIR)/libgooglemock.a
   DEFINES   += -DDEBUG -D_DEBUG -DGTEST_USE_OWN_TR1_TUPLE=1
   INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
-  CFLAGS    += $(CPPFLAGS) $(ARCH) -g -v  -fPIC -std=c++0x -stdlib=libc++ -std=c++11
+  CFLAGS    += $(CPPFLAGS) $(ARCH) -g -v  -fPIC
   CXXFLAGS  += $(CFLAGS) 
-  LDFLAGS   += -L.. -L../macosx/bin/Debug
+  LDFLAGS   += -L..
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
-  LIBS      += ../macosx/bin/Debug/libgooglemock.a ../macosx/bin/Debug/libgooglemock-main.a -lpthread -lc++
-  LDDEPS    += ../macosx/bin/Debug/libgooglemock.a ../macosx/bin/Debug/libgooglemock-main.a
-  LINKCMD    = $(CXX) -o $(TARGET) $(OBJECTS) $(RESOURCES) $(ARCH) $(LIBS) $(LDFLAGS)
+  LIBS      += 
+  LDDEPS    += 
+  LINKCMD    = $(AR) -rcs $(TARGET) $(OBJECTS)
   define PREBUILDCMDS
   endef
   define PRELINKCMDS
   endef
   define POSTBUILDCMDS
-	@echo Running post-build commands
-	$(TARGET)
   endef
 endif
 
 ifeq ($(config),release)
-  OBJDIR     = Release/obj/Release/test_ioc_cpp
+  OBJDIR     = Release/obj/Release/googlemock
   TARGETDIR  = ../macosx/bin/Release
-  TARGET     = $(TARGETDIR)/test_ioc_cpp
+  TARGET     = $(TARGETDIR)/libgooglemock.a
   DEFINES   += -DRELEASE -DGTEST_USE_OWN_TR1_TUPLE=1
   INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
-  CFLAGS    += $(CPPFLAGS) $(ARCH) -O2 -v  -fPIC -std=c++0x -stdlib=libc++ -std=c++11
+  CFLAGS    += $(CPPFLAGS) $(ARCH) -O2 -v  -fPIC
   CXXFLAGS  += $(CFLAGS) 
-  LDFLAGS   += -L.. -L../macosx/bin/Release -Wl,-x
+  LDFLAGS   += -L.. -Wl,-x
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
-  LIBS      += ../macosx/bin/Release/libgooglemock.a ../macosx/bin/Release/libgooglemock-main.a -lpthread -lc++
-  LDDEPS    += ../macosx/bin/Release/libgooglemock.a ../macosx/bin/Release/libgooglemock-main.a
-  LINKCMD    = $(CXX) -o $(TARGET) $(OBJECTS) $(RESOURCES) $(ARCH) $(LIBS) $(LDFLAGS)
+  LIBS      += 
+  LDDEPS    += 
+  LINKCMD    = $(AR) -rcs $(TARGET) $(OBJECTS)
   define PREBUILDCMDS
   endef
   define PRELINKCMDS
   endef
   define POSTBUILDCMDS
-	@echo Running post-build commands
-	$(TARGET)
   endef
 endif
 
 OBJECTS := \
-	$(OBJDIR)/test_wallaroo.o \
+	$(OBJDIR)/gmock-gtest-all.o \
 
 RESOURCES := \
 
@@ -94,7 +90,7 @@ all: $(TARGETDIR) $(OBJDIR) prebuild prelink $(TARGET)
 	@:
 
 $(TARGET): $(GCH) $(OBJECTS) $(LDDEPS) $(RESOURCES)
-	@echo Linking test_ioc_cpp
+	@echo Linking googlemock
 	$(SILENT) $(LINKCMD)
 	$(POSTBUILDCMDS)
 
@@ -115,7 +111,7 @@ else
 endif
 
 clean:
-	@echo Cleaning test_ioc_cpp
+	@echo Cleaning googlemock
 ifeq (posix,$(SHELLTYPE))
 	$(SILENT) rm -f  $(TARGET)
 	$(SILENT) rm -rf $(OBJDIR)
@@ -141,7 +137,7 @@ endif
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 endif
 
-$(OBJDIR)/test_wallaroo.o: ../test_wallaroo.cpp
+$(OBJDIR)/gmock-gtest-all.o: ../googlemock/fused-src/gmock-gtest-all.cc
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 

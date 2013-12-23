@@ -13,3 +13,6 @@
 [submodule "PocoCapsule"]
 	path = PocoCapsule
 	url = https://github.com/shdwshard/PocoCapsule.git
+[submodule "googlemock"]
+	path = googlemock
+	url = https://github.com/ericsubach/googlemock.git
