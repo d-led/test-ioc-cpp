@@ -56,13 +56,13 @@ TEST_F(wallaroo_hello_world,just_renderer) {
 	ASSERT_EQ( "", renderer->Render() );
 
 	// rewire
-	catalog.Create("mock model", "MockKeyValue");
+	catalog.Create("mock data", "MockKeyValue");
 	wallaroo_within(catalog)
 	{
-		use("mock model").as("model").of("renderer");
+		use("mock data").as("model").of("renderer");
 	}
 
-	std::shared_ptr<MockKeyValue> mock_model = catalog["mock model"];
+	std::shared_ptr<MockKeyValue> mock_model = catalog["mock data"];
 	ASSERT_TRUE( mock_model.get() );
 
 	// set expectations for 1 key
@@ -92,22 +92,32 @@ TEST_F(wallaroo_hello_world,just_decoder) {
 	ASSERT_EQ("", decoder->GetKey(22) );
 	ASSERT_EQ("", decoder->GetValue("42") );
 
-	catalog.Create("mock data","MockModel");
+	catalog.Create("mock model","MockModel");
 
-	std::shared_ptr<MockModel> mock_data = catalog["mock data"];
-	ASSERT_TRUE( mock_data.get() );
+	std::shared_ptr<MockModel> mock_model = catalog["mock model"];
+	ASSERT_TRUE( mock_model.get() );
 
-	EXPECT_CALL(*mock_data, Get())
+	EXPECT_CALL(*mock_model, Get())
 		.Times(AtLeast(1))
 		.WillRepeatedly(Return("{}"));
 
 	wallaroo_within(catalog)
 	{
-		use("mock data").as("data_source").of("decoder");
+		use("mock model").as("data_source").of("decoder");
 	}
 
 	ASSERT_EQ( 0, decoder->Count() );
 	ASSERT_EQ("", decoder->GetKey(22) );
 	ASSERT_EQ("", decoder->GetValue("42") );
-	Mock::VerifyAndClearExpectations(mock_data.get());
+	Mock::VerifyAndClearExpectations(mock_model.get());
+
+	EXPECT_CALL(*mock_model, Get())
+		.Times(AtLeast(1))
+		.WillRepeatedly(Return("{ \"a\" : 1 , \"b\" : 2 }"));
+
+	ASSERT_EQ( 2, decoder->Count() );
+	ASSERT_EQ("", decoder->GetKey(22) );
+	ASSERT_EQ("", decoder->GetValue("42") );
+	ASSERT_EQ("1", decoder->GetValue("a") );
+	ASSERT_EQ("2", decoder->GetValue("b") );
 }

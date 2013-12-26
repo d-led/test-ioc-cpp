@@ -20,7 +20,7 @@ public:
 	virtual size_t Count() const  {
 		parse_if_necessary();
 
-		return 0;
+		return keys.size();
 	}
 
 	virtual std::string GetKey(size_t pos) const {
