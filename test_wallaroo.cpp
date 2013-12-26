@@ -111,6 +111,7 @@ TEST_F(wallaroo_hello_world,just_decoder) {
 	ASSERT_EQ("", decoder->GetValue("42") );
 	Mock::VerifyAndClearExpectations(mock_model.get());
 
+	// changed data
 	EXPECT_CALL(*mock_model, Get())
 		.Times(AtLeast(1))
 		.WillRepeatedly(Return("{ \"a\" : 1 , \"b\" : 2 }"));
@@ -120,4 +121,25 @@ TEST_F(wallaroo_hello_world,just_decoder) {
 	ASSERT_EQ("", decoder->GetValue("42") );
 	ASSERT_EQ("1", decoder->GetValue("a") );
 	ASSERT_EQ("2", decoder->GetValue("b") );
+}
+
+TEST_F(wallaroo_hello_world,all_together) {
+	
+	// model
+	catalog.Create("mock model","MockModel");
+	std::shared_ptr<MockModel> mock_model = catalog["mock model"];
+	ASSERT_TRUE( mock_model.get() );
+	EXPECT_CALL(*mock_model, Get())
+		.Times(AtLeast(1))
+		.WillRepeatedly(Return("{ \"a\" : 1 , \"b\" : 2 }"));
+
+	// configuration
+	wallaroo_within(catalog)
+	{
+		use("decoder").as("model").of("renderer");
+		use("mock model").as("data_source").of("decoder");
+	}
+
+	// render
+	ASSERT_EQ( "a,b", renderer->Render() );
 }
