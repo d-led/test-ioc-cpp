@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "googlemock", "googlemock.vcxproj", "{AC7B6BC4-9833-AD11-013B-866DED114802}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "googlemock-main", "googlemock-main.vcxproj", "{BE6573BE-2AF1-E082-3302-64779F0C3D83}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_ioc_cpp", "test_ioc_cpp.vcxproj", "{C1CBD106-AD2E-61AB-56B4-996142F62C2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|native = Debug|native
+		Release|native = Release|native
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC7B6BC4-9833-AD11-013B-866DED114802}.Debug|native.ActiveCfg = Debug native|Win32
+		{AC7B6BC4-9833-AD11-013B-866DED114802}.Debug|native.Build.0 = Debug native|Win32
+		{AC7B6BC4-9833-AD11-013B-866DED114802}.Release|native.ActiveCfg = Release native|Win32
+		{AC7B6BC4-9833-AD11-013B-866DED114802}.Release|native.Build.0 = Release native|Win32
+		{BE6573BE-2AF1-E082-3302-64779F0C3D83}.Debug|native.ActiveCfg = Debug native|Win32
+		{BE6573BE-2AF1-E082-3302-64779F0C3D83}.Debug|native.Build.0 = Debug native|Win32
+		{BE6573BE-2AF1-E082-3302-64779F0C3D83}.Release|native.ActiveCfg = Release native|Win32
+		{BE6573BE-2AF1-E082-3302-64779F0C3D83}.Release|native.Build.0 = Release native|Win32
+		{C1CBD106-AD2E-61AB-56B4-996142F62C2E}.Debug|native.ActiveCfg = Debug native|Win32
+		{C1CBD106-AD2E-61AB-56B4-996142F62C2E}.Debug|native.Build.0 = Debug native|Win32
+		{C1CBD106-AD2E-61AB-56B4-996142F62C2E}.Release|native.ActiveCfg = Release native|Win32
+		{C1CBD106-AD2E-61AB-56B4-996142F62C2E}.Release|native.Build.0 = Release native|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
