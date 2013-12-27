@@ -20,7 +20,8 @@ make_static_lib("googlemock-main", {"./googlemock/fused-src/gmock_main.cc"} )
 make_console_app('test_ioc_cpp',
 	{
 		'./*.cpp',
-		'./intrusive/*.cpp'
+		'./intrusive/*.cpp',
+		'./common/implementations/*.cpp'
 	}
 )
 

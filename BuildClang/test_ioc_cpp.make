@@ -83,6 +83,7 @@ OBJECTS := \
 	$(OBJDIR)/test_wallaroo.o \
 	$(OBJDIR)/wallaroo_jsondecoder.o \
 	$(OBJDIR)/wallaroo_render.o \
+	$(OBJDIR)/key_renderer.o \
 
 RESOURCES := \
 
@@ -166,6 +167,9 @@ $(OBJDIR)/wallaroo_jsondecoder.o: ../intrusive/wallaroo_jsondecoder.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/wallaroo_render.o: ../intrusive/wallaroo_render.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/key_renderer.o: ../common/implementations/key_renderer.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 

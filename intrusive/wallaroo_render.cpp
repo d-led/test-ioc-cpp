@@ -2,6 +2,8 @@
 #include "../common/interfaces/igetkeyvalue.h"
 #include "../common/interfaces/irender.h"
 
+#include "../common/implementations/key_renderer.h"
+
 #include <wallaroo/registered.h>
 #include <wallaroo/plug.h>
 
@@ -19,16 +21,12 @@ public:
 		if (!model)
 			return "";
 
-	 	static const char* DELIMITER = ",";
+		// delegating the task to a general implementation
+	 	auto renderer = NewKeyRenderer(model);
+	 	if (!renderer)
+	 		return "";
 
-		std::stringstream ss;
-		for (size_t pos = 0; pos < model->Count(); pos++) {
-			if ( pos!= 0 )
-				ss << DELIMITER;
-			ss << model->GetKey(pos);
-		}
-
-		return ss.str();
+	 	return renderer->Render();
 	}
 
 private:
