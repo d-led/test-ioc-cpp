@@ -11,7 +11,7 @@ The frameworks currently aspiring:
 
  - [wallaroo](https://code.google.com/p/wallaroo/)
  - [sauce](https://github.com/phs/sauce)
- - [hypodermic](https://code.google.com/p/hypodermic)
+ - [~~hypodermic~~](https://code.google.com/p/hypodermic) (currently doesn't build with clang-500.2.79 on MacOS)
  - [pococapsule](http://www.pocomatic.com/docs/whitepapers/pococapsule-cpp/)
  - [dicpp](https://bitbucket.org/cheez/dicpp/wiki/Home)
 
