@@ -111,6 +111,14 @@ TEST_F(wallaroo_hello_world,just_decoder) {
 	ASSERT_EQ("", decoder->GetValue("42") );
 	Mock::VerifyAndClearExpectations(mock_model.get());
 
+	// change to invalid data
+	EXPECT_CALL(*mock_model, Get())
+		.Times(AtLeast(1))
+		.WillRepeatedly(Return("0000001230000abc000"));
+	ASSERT_EQ( 0, decoder->Count() );
+	Mock::VerifyAndClearExpectations(mock_model.get());
+
+
 	// changed data
 	EXPECT_CALL(*mock_model, Get())
 		.Times(AtLeast(1))
