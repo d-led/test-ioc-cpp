@@ -32,9 +32,9 @@ protected:
 
 class MockKeyValue : public IGetKeyValue, public wallaroo::Device {
 public:
-	MOCK_CONST_METHOD0(Count, size_t());
-	MOCK_CONST_METHOD1(GetKey, std::string(size_t pos));
-	MOCK_CONST_METHOD1(GetValue, std::string(std::string const&));
+	MOCK_METHOD0(Count, size_t());
+	MOCK_METHOD1(GetKey, std::string(size_t pos));
+	MOCK_METHOD1(GetValue, std::string(std::string const&));
 };
 WALLAROO_REGISTER( MockKeyValue );
 

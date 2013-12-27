@@ -83,6 +83,7 @@ OBJECTS := \
 	$(OBJDIR)/test_sauce.o \
 	$(OBJDIR)/wallaroo_render.o \
 	$(OBJDIR)/wallaroo_jsondecoder.o \
+	$(OBJDIR)/json_decoder.o \
 	$(OBJDIR)/key_renderer.o \
 
 
@@ -168,6 +169,9 @@ $(OBJDIR)/wallaroo_render.o: ../intrusive/wallaroo_render.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/wallaroo_jsondecoder.o: ../intrusive/wallaroo_jsondecoder.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/json_decoder.o: ../common/implementations/json_decoder.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/key_renderer.o: ../common/implementations/key_renderer.cpp
