@@ -40,7 +40,7 @@ WALLAROO_REGISTER( MockKeyValue );
 
 class MockModel : public IModel, public wallaroo::Device {
 public:
-	MOCK_CONST_METHOD0(Get, std::string());
+	MOCK_METHOD0(Get, std::string());
 };
 WALLAROO_REGISTER( MockModel );
 

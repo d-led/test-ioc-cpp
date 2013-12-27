@@ -3,6 +3,6 @@
 #include <string>
 
 struct IModel {
-	virtual std::string Get() const = 0;
+	virtual std::string Get() = 0;
 	virtual ~IModel() {}
 };
