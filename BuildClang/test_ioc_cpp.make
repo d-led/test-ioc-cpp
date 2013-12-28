@@ -81,6 +81,8 @@ OBJECTS := \
 	$(OBJDIR)/test_pococapsule.o \
 	$(OBJDIR)/test_sauce.o \
 	$(OBJDIR)/test_wallaroo.o \
+	$(OBJDIR)/sauce_decoder.o \
+	$(OBJDIR)/sauce_renderer.o \
 	$(OBJDIR)/wallaroo_jsondecoder.o \
 	$(OBJDIR)/wallaroo_render.o \
 	$(OBJDIR)/json_decoder.o \
@@ -162,6 +164,12 @@ $(OBJDIR)/test_sauce.o: ../test_sauce.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/test_wallaroo.o: ../test_wallaroo.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/sauce_decoder.o: ../intrusive/sauce_decoder.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/sauce_renderer.o: ../intrusive/sauce_renderer.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/wallaroo_jsondecoder.o: ../intrusive/wallaroo_jsondecoder.cpp
