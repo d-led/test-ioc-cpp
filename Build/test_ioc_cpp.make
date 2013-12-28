@@ -85,8 +85,6 @@ OBJECTS := \
 	$(OBJDIR)/sauce_renderer.o \
 	$(OBJDIR)/wallaroo_jsondecoder.o \
 	$(OBJDIR)/wallaroo_render.o \
-
-
 	$(OBJDIR)/json_decoder.o \
 	$(OBJDIR)/key_renderer.o \
 
