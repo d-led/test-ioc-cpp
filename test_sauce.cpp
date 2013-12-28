@@ -12,8 +12,6 @@ using sauce::Injector;
 
 namespace {
 
-	class SingletonScope {};
-
 	class MockModel : public IModel {
 	public:
 		virtual std::string Get() {
@@ -34,8 +32,6 @@ TEST(sauce_hello_world,all_together) {
 		.add(model_module)
 		.createInjector()
 	;
-
-	injector->enter<SingletonScope>();
 
 	// renderer instance
 	sauce::shared_ptr<IRender> renderer = injector->get<IRender>();
