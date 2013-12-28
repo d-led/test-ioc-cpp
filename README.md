@@ -21,4 +21,7 @@ Testing and mocking of C++ objects is done via [googlemock+googletest](https://c
 
 [Travis CI](https://travis-ci.org/) is used for a proof of concept continuous integration.
  
-The blog entries will be linked here
+Blog
+----
+
+ - [Part 1, Wallaroo Introduction](http://ledentsov.de/2013/12/26/quest-for-a-cpp-dependency-injection-container-library-part-1-wallaroo-introduction/)
