@@ -25,3 +25,4 @@ Blog
 ----
 
  - [Part 1, Wallaroo Introduction](http://ledentsov.de/2013/12/26/quest-for-a-cpp-dependency-injection-container-library-part-1-wallaroo-introduction/)
+ - [Part 2, Some Sauce](http://ledentsov.de/2014/01/01/quest-for-dependency-injection-library-part2-some-sauce/)
