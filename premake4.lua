@@ -33,3 +33,12 @@ links {
 make_cpp11()
 
 run_target_after_build()
+
+
+newaction {
+        trigger     = "prepare",
+        description = "check out non-git dependencies",
+        execute     = function ()
+            os.execute [[hg clone https://bitbucket.org/cheez/dicpp]]
+        end
+}

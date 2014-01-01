@@ -20,6 +20,12 @@ Build files are generated using the convenience wrapper for [premake](http://ind
 Testing and mocking of C++ objects is done via [googlemock+googletest](https://code.google.com/p/googlemock/).
 
 [Travis CI](https://travis-ci.org/) is used for a proof of concept continuous integration.
+
+Preparing build
+---------------
+
+ - `premake\premake4 prepare` to check out non-git dependencies
+ - `premake\premake4 gmake` or `premake\premake4 vs2012` or `premake\premake4 xcode4` to generate build files
  
 Blog
 ----
