@@ -79,7 +79,6 @@ OBJECTS := \
 	$(OBJDIR)/test_pococapsule.o \
 	$(OBJDIR)/test_hypodermic.o \
 	$(OBJDIR)/test_wallaroo.o \
-	$(OBJDIR)/test_dicpp.o \
 	$(OBJDIR)/test_sauce.o \
 	$(OBJDIR)/sauce_decoder.o \
 	$(OBJDIR)/sauce_renderer.o \
@@ -159,9 +158,6 @@ $(OBJDIR)/test_hypodermic.o: ../test_hypodermic.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/test_wallaroo.o: ../test_wallaroo.cpp
-	@echo $(notdir $<)
-	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
-$(OBJDIR)/test_dicpp.o: ../test_dicpp.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/test_sauce.o: ../test_sauce.cpp
