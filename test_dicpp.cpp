@@ -27,8 +27,6 @@ namespace {
 	}
 }
 
-#include <boost/shared_ptr.hpp>
-
 TEST(dicpp_hello_world,example) {
 	di::injector inj;
 	inj.install( dicpp_module );
