@@ -38,8 +38,8 @@ TEST(dicpp_hello_world,example) {
 	auto mock_model_2 = inj.construct< boost::shared_ptr<IModel> >();
 	ASSERT_EQ( mock_model.get() , mock_model_2.get() );
 
-	auto mock_model_ptr ( boost::static_pointer_cast< MockModel >(mock_model));
-	ASSERT_TRUE( mock_model_ptr.get() );
+	auto mock_model_ptr = dynamic_cast< MockModel* >(mock_model.get());
+	ASSERT_TRUE( mock_model_ptr );
 
 	EXPECT_CALL(*mock_model_ptr, Get())
 		.Times(AtLeast(1))
