@@ -1,7 +1,7 @@
 #include "key_renderer.h"
 
 #include <sstream>
-
+#include <iostream>
 class KeyRenderer : public IRender {
 public:
 	KeyRenderer(std::shared_ptr< IGetKeyValue > m) :

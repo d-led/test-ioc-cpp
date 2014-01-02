@@ -46,6 +46,7 @@ private:
 	}
 
 	void parse_if_necessary() {
+		
 		if (!data_source) {
 			last_data = "";
 			this->clear();

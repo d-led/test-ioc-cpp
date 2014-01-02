@@ -4,18 +4,30 @@ assert( require 'premake.quickstart' )
 
 make_solution 'test_ioc_cpp'
 
+local OS = os.get()
+local settings = {
+        links = {
+                linux = { 'boost_system' },
+                windows = { },
+                macosx = { 'boost_system' }
+        }
+}
+
 includedirs {
 	'./googlemock/fused-src',
 	'./Hypodermic',
 	'./sauce',
 	'./wallaroo',
 	'./PocoCapsule/include',
-	'./picojson'
+	'./picojson',
+	'./dicpp/include'
 }
 
 make_static_lib("googlemock", {"./googlemock/fused-src/gmock-gtest-all.cc"} )
 
 make_static_lib("googlemock-main", {"./googlemock/fused-src/gmock_main.cc"} )
+
+make_static_lib("dicpp", {"./dicpp/lib/src/**.cpp"} )
 
 make_console_app('test_ioc_cpp',
 	{
@@ -27,7 +39,13 @@ make_console_app('test_ioc_cpp',
 
 links {
 	'googlemock',
-	'googlemock-main'
+	'googlemock-main',
+	'dicpp',
+	settings.links[OS]
+}
+
+defines {
+	-- 'DI_DISABLE_LOGGING'
 }
 
 make_cpp11()
