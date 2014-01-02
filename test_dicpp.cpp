@@ -52,5 +52,3 @@ TEST(dicpp_hello_world,example) {
 
 	ASSERT_EQ( "a,b", renderer->Render() );
 }
-
-//r.add( r.type<AnObject>() );
