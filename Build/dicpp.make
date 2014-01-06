@@ -28,9 +28,9 @@ ifndef RESCOMP
 endif
 
 ifeq ($(config),debug)
-  OBJDIR     = Debug/obj/Debug/googlemock-main
+  OBJDIR     = Debug/obj/Debug/dicpp
   TARGETDIR  = ../linux/bin/Debug
-  TARGET     = $(TARGETDIR)/libgooglemock-main.a
+  TARGET     = $(TARGETDIR)/libdicpp.a
   DEFINES   += -DDEBUG -D_DEBUG
   INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include -I../picojson -I../dicpp/include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
@@ -50,9 +50,9 @@ ifeq ($(config),debug)
 endif
 
 ifeq ($(config),release)
-  OBJDIR     = Release/obj/Release/googlemock-main
+  OBJDIR     = Release/obj/Release/dicpp
   TARGETDIR  = ../linux/bin/Release
-  TARGET     = $(TARGETDIR)/libgooglemock-main.a
+  TARGET     = $(TARGETDIR)/libdicpp.a
   DEFINES   += -DRELEASE
   INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include -I../picojson -I../dicpp/include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
@@ -72,7 +72,16 @@ ifeq ($(config),release)
 endif
 
 OBJECTS := \
-	$(OBJDIR)/gmock_main.o \
+	$(OBJDIR)/type_info.o \
+	$(OBJDIR)/empty.o \
+	$(OBJDIR)/type_provider.o \
+	$(OBJDIR)/scope.o \
+	$(OBJDIR)/injector.o \
+	$(OBJDIR)/demangle.o \
+	$(OBJDIR)/registry.o \
+	$(OBJDIR)/thread_local_singleton.o \
+	$(OBJDIR)/singleton.o \
+	$(OBJDIR)/no_scope.o \
 
 RESOURCES := \
 
@@ -90,7 +99,7 @@ all: $(TARGETDIR) $(OBJDIR) prebuild prelink $(TARGET)
 	@:
 
 $(TARGET): $(GCH) $(OBJECTS) $(LDDEPS) $(RESOURCES)
-	@echo Linking googlemock-main
+	@echo Linking dicpp
 	$(SILENT) $(LINKCMD)
 	$(POSTBUILDCMDS)
 
@@ -111,7 +120,7 @@ else
 endif
 
 clean:
-	@echo Cleaning googlemock-main
+	@echo Cleaning dicpp
 ifeq (posix,$(SHELLTYPE))
 	$(SILENT) rm -f  $(TARGET)
 	$(SILENT) rm -rf $(OBJDIR)
@@ -137,7 +146,34 @@ endif
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 endif
 
-$(OBJDIR)/gmock_main.o: ../googlemock/fused-src/gmock_main.cc
+$(OBJDIR)/type_info.o: ../dicpp/lib/src/type_info.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/empty.o: ../dicpp/lib/src/empty.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/type_provider.o: ../dicpp/lib/src/type_provider.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/scope.o: ../dicpp/lib/src/scope.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/injector.o: ../dicpp/lib/src/injector.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/demangle.o: ../dicpp/lib/src/demangle.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/registry.o: ../dicpp/lib/src/registry.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/thread_local_singleton.o: ../dicpp/lib/src/scopes/thread_local_singleton.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/singleton.o: ../dicpp/lib/src/scopes/singleton.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/no_scope.o: ../dicpp/lib/src/scopes/no_scope.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 

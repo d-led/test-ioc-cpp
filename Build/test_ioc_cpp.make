@@ -32,14 +32,14 @@ ifeq ($(config),debug)
   TARGETDIR  = ../linux/bin/Debug
   TARGET     = $(TARGETDIR)/test_ioc_cpp
   DEFINES   += -DDEBUG -D_DEBUG
-  INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include -I../picojson
+  INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include -I../picojson -I../dicpp/include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -g -v -fPIC -std=c++0x
   CXXFLAGS  += $(CFLAGS) 
   LDFLAGS   += -L.. -L../linux/bin/Debug
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
-  LIBS      += ../linux/bin/Debug/libgooglemock.a ../linux/bin/Debug/libgooglemock-main.a -lpthread
-  LDDEPS    += ../linux/bin/Debug/libgooglemock.a ../linux/bin/Debug/libgooglemock-main.a
+  LIBS      += ../linux/bin/Debug/libgooglemock.a ../linux/bin/Debug/libgooglemock-main.a ../linux/bin/Debug/libdicpp.a -lboost_system -lpthread
+  LDDEPS    += ../linux/bin/Debug/libgooglemock.a ../linux/bin/Debug/libgooglemock-main.a ../linux/bin/Debug/libdicpp.a
   LINKCMD    = $(CXX) -o $(TARGET) $(OBJECTS) $(RESOURCES) $(ARCH) $(LIBS) $(LDFLAGS)
   define PREBUILDCMDS
   endef
@@ -56,14 +56,14 @@ ifeq ($(config),release)
   TARGETDIR  = ../linux/bin/Release
   TARGET     = $(TARGETDIR)/test_ioc_cpp
   DEFINES   += -DRELEASE
-  INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include -I../picojson
+  INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include -I../picojson -I../dicpp/include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
   CFLAGS    += $(CPPFLAGS) $(ARCH) -O2 -v -fPIC -std=c++0x
   CXXFLAGS  += $(CFLAGS) 
   LDFLAGS   += -L.. -L../linux/bin/Release -s
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
-  LIBS      += ../linux/bin/Release/libgooglemock.a ../linux/bin/Release/libgooglemock-main.a -lpthread
-  LDDEPS    += ../linux/bin/Release/libgooglemock.a ../linux/bin/Release/libgooglemock-main.a
+  LIBS      += ../linux/bin/Release/libgooglemock.a ../linux/bin/Release/libgooglemock-main.a ../linux/bin/Release/libdicpp.a -lboost_system -lpthread
+  LDDEPS    += ../linux/bin/Release/libgooglemock.a ../linux/bin/Release/libgooglemock-main.a ../linux/bin/Release/libdicpp.a
   LINKCMD    = $(CXX) -o $(TARGET) $(OBJECTS) $(RESOURCES) $(ARCH) $(LIBS) $(LDFLAGS)
   define PREBUILDCMDS
   endef
@@ -79,14 +79,15 @@ OBJECTS := \
 	$(OBJDIR)/test_pococapsule.o \
 	$(OBJDIR)/test_hypodermic.o \
 	$(OBJDIR)/test_wallaroo.o \
+	$(OBJDIR)/test_dicpp.o \
 	$(OBJDIR)/test_sauce.o \
-	$(OBJDIR)/sauce_decoder.o \
+	$(OBJDIR)/dicpp_module.o \
+	$(OBJDIR)/wallaroo_render.o \
 	$(OBJDIR)/sauce_renderer.o \
 	$(OBJDIR)/wallaroo_jsondecoder.o \
-	$(OBJDIR)/wallaroo_render.o \
-	$(OBJDIR)/json_decoder.o \
+	$(OBJDIR)/sauce_decoder.o \
 	$(OBJDIR)/key_renderer.o \
-
+	$(OBJDIR)/json_decoder.o \
 
 RESOURCES := \
 
@@ -160,25 +161,31 @@ $(OBJDIR)/test_hypodermic.o: ../test_hypodermic.cpp
 $(OBJDIR)/test_wallaroo.o: ../test_wallaroo.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/test_dicpp.o: ../test_dicpp.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/test_sauce.o: ../test_sauce.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
-$(OBJDIR)/sauce_decoder.o: ../intrusive/sauce_decoder.cpp
-	@echo $(notdir $<)
-	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
-$(OBJDIR)/sauce_renderer.o: ../intrusive/sauce_renderer.cpp
+$(OBJDIR)/dicpp_module.o: ../intrusive/dicpp_module.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/wallaroo_render.o: ../intrusive/wallaroo_render.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/sauce_renderer.o: ../intrusive/sauce_renderer.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/wallaroo_jsondecoder.o: ../intrusive/wallaroo_jsondecoder.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
-$(OBJDIR)/json_decoder.o: ../common/implementations/json_decoder.cpp
+$(OBJDIR)/sauce_decoder.o: ../intrusive/sauce_decoder.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/key_renderer.o: ../common/implementations/key_renderer.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/json_decoder.o: ../common/implementations/json_decoder.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 

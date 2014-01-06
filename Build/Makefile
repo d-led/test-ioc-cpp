@@ -6,7 +6,7 @@ ifndef config
 endif
 export config
 
-PROJECTS := googlemock googlemock-main test_ioc_cpp
+PROJECTS := googlemock googlemock-main dicpp test_ioc_cpp
 
 .PHONY: all clean help $(PROJECTS)
 
@@ -20,13 +20,18 @@ googlemock-main:
 	@echo "==== Building googlemock-main ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f googlemock-main.make
 
-test_ioc_cpp: googlemock googlemock-main
+dicpp: 
+	@echo "==== Building dicpp ($(config)) ===="
+	@${MAKE} --no-print-directory -C . -f dicpp.make
+
+test_ioc_cpp: googlemock googlemock-main dicpp
 	@echo "==== Building test_ioc_cpp ($(config)) ===="
 	@${MAKE} --no-print-directory -C . -f test_ioc_cpp.make
 
 clean:
 	@${MAKE} --no-print-directory -C . -f googlemock.make clean
 	@${MAKE} --no-print-directory -C . -f googlemock-main.make clean
+	@${MAKE} --no-print-directory -C . -f dicpp.make clean
 	@${MAKE} --no-print-directory -C . -f test_ioc_cpp.make clean
 
 help:
@@ -41,6 +46,7 @@ help:
 	@echo "   clean"
 	@echo "   googlemock"
 	@echo "   googlemock-main"
+	@echo "   dicpp"
 	@echo "   test_ioc_cpp"
 	@echo ""
 	@echo "For more information, see http://industriousone.com/premake/quick-start"
