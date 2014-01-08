@@ -26,6 +26,7 @@ Preparing build
 
  - `premake\premake4 prepare` to check out non-git dependencies
  - `premake\premake4 gmake` or `premake\premake4 vs2012` or `premake\premake4 xcode4` to generate build files
+ - If you don't have Mercurial, download and extract [dicpp](https://bitbucket.org/cheez/dicpp/overview) into the dicpp folder
  
 Blog
 ----
