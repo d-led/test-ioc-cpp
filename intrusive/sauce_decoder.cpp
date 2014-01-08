@@ -1,4 +1,7 @@
 #include "sauce_renderer.h"
+
+#include "../common/interfaces/imodel.h"
+
 #include "../common/implementations/json_decoder.h"
 
 #include <sauce/sauce.h>

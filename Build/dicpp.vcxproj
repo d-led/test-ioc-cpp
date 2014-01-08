@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BE6573BE-2AF1-E082-3302-64779F0C3D83}</ProjectGuid>
+    <ProjectGuid>{55DA4B0F-C1EE-73C0-8A70-1720F64370F1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>googlemock-main</RootNamespace>
+    <RootNamespace>dicpp</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug native|Win32'" Label="Configuration">
@@ -40,14 +40,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug native|Win32'">
     <OutDir>..\windows\bin\Debug\</OutDir>
-    <IntDir>Debug\obj\native\Debug\googlemock-main\</IntDir>
-    <TargetName>googlemock-main</TargetName>
+    <IntDir>Debug\obj\native\Debug\dicpp\</IntDir>
+    <TargetName>dicpp</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release native|Win32'">
     <OutDir>..\windows\bin\Release\</OutDir>
-    <IntDir>Release\obj\native\Release\googlemock-main\</IntDir>
-    <TargetName>googlemock-main</TargetName>
+    <IntDir>Release\obj\native\Release\dicpp\</IntDir>
+    <TargetName>dicpp</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug native|Win32'">
@@ -57,7 +57,7 @@
       <PreprocessorDefinitions>DEBUG;_DEBUG;_VARIADIC_MAX=10;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\..\..\..\boost\boost_1_51;..\googlemock\fused-src;..\Hypodermic;..\sauce;..\wallaroo;..\PocoCapsule\include;..\picojson;..\dicpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <ProgramDataBaseFileName>$(OutDir)googlemock-main.pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>$(OutDir)dicpp.pdb</ProgramDataBaseFileName>
       <Optimization>Disabled</Optimization>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -95,7 +95,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\googlemock\fused-src\gmock_main.cc">
+    <ClCompile Include="..\dicpp\lib\src\demangle.cpp">
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\empty.cpp">
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\injector.cpp">
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\scopes\no_scope.cpp">
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\registry.cpp">
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\scope.cpp">
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\scopes\singleton.cpp">
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\scopes\thread_local_singleton.cpp">
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\type_info.cpp">
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\type_provider.cpp">
     </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

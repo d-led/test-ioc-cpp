@@ -1,4 +1,8 @@
 #include "sauce_renderer.h"
+
+#include "../common/interfaces/irender.h"
+#include "../common/interfaces/igetkeyvalue.h"
+
 #include "../common/implementations/key_renderer.h"
 
 #include <sauce/sauce.h>
