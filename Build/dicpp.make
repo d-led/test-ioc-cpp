@@ -34,11 +34,11 @@ ifeq ($(config),debug)
   DEFINES   += -DDEBUG -D_DEBUG
   INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include -I../picojson -I../dicpp/include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
-  CFLAGS    += $(CPPFLAGS) $(ARCH) -g -v -fPIC
+  CFLAGS    += $(CPPFLAGS) $(ARCH) -g -v -fPIC -std=c++0x
   CXXFLAGS  += $(CFLAGS) 
   LDFLAGS   += -L..
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
-  LIBS      += 
+  LIBS      += -lpthread
   LDDEPS    += 
   LINKCMD    = $(AR) -rcs $(TARGET) $(OBJECTS)
   define PREBUILDCMDS
@@ -56,11 +56,11 @@ ifeq ($(config),release)
   DEFINES   += -DRELEASE
   INCLUDES  += -I.. -I../googlemock/fused-src -I../Hypodermic -I../sauce -I../wallaroo -I../PocoCapsule/include -I../picojson -I../dicpp/include
   CPPFLAGS  += -MMD -MP $(DEFINES) $(INCLUDES)
-  CFLAGS    += $(CPPFLAGS) $(ARCH) -O2 -v -fPIC
+  CFLAGS    += $(CPPFLAGS) $(ARCH) -O2 -v -fPIC -std=c++0x
   CXXFLAGS  += $(CFLAGS) 
   LDFLAGS   += -L.. -s
   RESFLAGS  += $(DEFINES) $(INCLUDES) 
-  LIBS      += 
+  LIBS      += -lpthread
   LDDEPS    += 
   LINKCMD    = $(AR) -rcs $(TARGET) $(OBJECTS)
   define PREBUILDCMDS
