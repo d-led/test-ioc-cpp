@@ -73,6 +73,7 @@ endif
 
 OBJECTS := \
 	$(OBJDIR)/type_info.o \
+	$(OBJDIR)/injected_member.o \
 	$(OBJDIR)/empty.o \
 	$(OBJDIR)/type_provider.o \
 	$(OBJDIR)/scope.o \
@@ -147,6 +148,9 @@ endif
 endif
 
 $(OBJDIR)/type_info.o: ../dicpp/lib/src/type_info.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
+$(OBJDIR)/injected_member.o: ../dicpp/lib/src/injected_member.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(CXXFLAGS) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 $(OBJDIR)/empty.o: ../dicpp/lib/src/empty.cpp
