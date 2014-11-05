@@ -33,7 +33,7 @@ TEST(dicpp_hello_world,example) {
     inj.install( mock_module );
 
     auto mock_model = inj.construct_ptr< IModel >();
-    ASSERT_TRUE( mock_model )<<"the singleton";
+    ASSERT_TRUE( !!mock_model )<<"the singleton";
 
     auto mock_model_2 = inj.construct_ptr< IModel >();
     ASSERT_EQ( mock_model.get() , mock_model_2.get() );
@@ -46,7 +46,7 @@ TEST(dicpp_hello_world,example) {
         .WillRepeatedly(Return("{ \"a\" : 1 , \"b\" : 2 }"));
     
     auto renderer = inj.construct_ptr< IRender >();
-    ASSERT_TRUE( renderer );
+    ASSERT_TRUE( !!renderer );
 
     ASSERT_EQ( "a,b", renderer->Render() );
 }
