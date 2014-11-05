@@ -14,7 +14,7 @@ local settings = {
         libdirs = {
         		linux = {},
         		windows = {
-        			path.join( os.getenv 'BOOST', 'lib32-msvc-11.0' )
+        			path.join( os.getenv 'BOOST', 'lib32-msvc-12.0' )
         		},
         		macosx = {
         			'/usr/local/lib'

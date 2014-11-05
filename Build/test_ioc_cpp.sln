@@ -1,36 +1,41 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "googlemock", "googlemock.vcxproj", "{AC7B6BC4-9833-AD11-013B-866DED114802}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "googlemock", "googlemock.vcxproj", "{53D37460-D1FE-9A40-93EE-7CCE0080CAD3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "googlemock-main", "googlemock-main.vcxproj", "{BE6573BE-2AF1-E082-3302-64779F0C3D83}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "googlemock-main", "googlemock-main.vcxproj", "{85078396-63F5-5F45-989B-8E08DA584776}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dicpp", "dicpp.vcxproj", "{55DA4B0F-C1EE-73C0-8A70-1720F64370F1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dicpp", "dicpp.vcxproj", "{43098C18-428D-A640-95BB-67388DAABA0A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_ioc_cpp", "test_ioc_cpp.vcxproj", "{C1CBD106-AD2E-61AB-56B4-996142F62C2E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_ioc_cpp", "test_ioc_cpp.vcxproj", "{8E1648CC-25B9-6D44-9F30-9FE1117D88A7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{53D37460-D1FE-9A40-93EE-7CCE0080CAD3} = {53D37460-D1FE-9A40-93EE-7CCE0080CAD3}
+		{85078396-63F5-5F45-989B-8E08DA584776} = {85078396-63F5-5F45-989B-8E08DA584776}
+		{43098C18-428D-A640-95BB-67388DAABA0A} = {43098C18-428D-A640-95BB-67388DAABA0A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|native = Debug|native
-		Release|native = Release|native
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AC7B6BC4-9833-AD11-013B-866DED114802}.Debug|native.ActiveCfg = Debug native|Win32
-		{AC7B6BC4-9833-AD11-013B-866DED114802}.Debug|native.Build.0 = Debug native|Win32
-		{AC7B6BC4-9833-AD11-013B-866DED114802}.Release|native.ActiveCfg = Release native|Win32
-		{AC7B6BC4-9833-AD11-013B-866DED114802}.Release|native.Build.0 = Release native|Win32
-		{BE6573BE-2AF1-E082-3302-64779F0C3D83}.Debug|native.ActiveCfg = Debug native|Win32
-		{BE6573BE-2AF1-E082-3302-64779F0C3D83}.Debug|native.Build.0 = Debug native|Win32
-		{BE6573BE-2AF1-E082-3302-64779F0C3D83}.Release|native.ActiveCfg = Release native|Win32
-		{BE6573BE-2AF1-E082-3302-64779F0C3D83}.Release|native.Build.0 = Release native|Win32
-		{55DA4B0F-C1EE-73C0-8A70-1720F64370F1}.Debug|native.ActiveCfg = Debug native|Win32
-		{55DA4B0F-C1EE-73C0-8A70-1720F64370F1}.Debug|native.Build.0 = Debug native|Win32
-		{55DA4B0F-C1EE-73C0-8A70-1720F64370F1}.Release|native.ActiveCfg = Release native|Win32
-		{55DA4B0F-C1EE-73C0-8A70-1720F64370F1}.Release|native.Build.0 = Release native|Win32
-		{C1CBD106-AD2E-61AB-56B4-996142F62C2E}.Debug|native.ActiveCfg = Debug native|Win32
-		{C1CBD106-AD2E-61AB-56B4-996142F62C2E}.Debug|native.Build.0 = Debug native|Win32
-		{C1CBD106-AD2E-61AB-56B4-996142F62C2E}.Release|native.ActiveCfg = Release native|Win32
-		{C1CBD106-AD2E-61AB-56B4-996142F62C2E}.Release|native.Build.0 = Release native|Win32
+		{53D37460-D1FE-9A40-93EE-7CCE0080CAD3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{53D37460-D1FE-9A40-93EE-7CCE0080CAD3}.Debug|Win32.Build.0 = Debug|Win32
+		{53D37460-D1FE-9A40-93EE-7CCE0080CAD3}.Release|Win32.ActiveCfg = Release|Win32
+		{53D37460-D1FE-9A40-93EE-7CCE0080CAD3}.Release|Win32.Build.0 = Release|Win32
+		{85078396-63F5-5F45-989B-8E08DA584776}.Debug|Win32.ActiveCfg = Debug|Win32
+		{85078396-63F5-5F45-989B-8E08DA584776}.Debug|Win32.Build.0 = Debug|Win32
+		{85078396-63F5-5F45-989B-8E08DA584776}.Release|Win32.ActiveCfg = Release|Win32
+		{85078396-63F5-5F45-989B-8E08DA584776}.Release|Win32.Build.0 = Release|Win32
+		{43098C18-428D-A640-95BB-67388DAABA0A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{43098C18-428D-A640-95BB-67388DAABA0A}.Debug|Win32.Build.0 = Debug|Win32
+		{43098C18-428D-A640-95BB-67388DAABA0A}.Release|Win32.ActiveCfg = Release|Win32
+		{43098C18-428D-A640-95BB-67388DAABA0A}.Release|Win32.Build.0 = Release|Win32
+		{8E1648CC-25B9-6D44-9F30-9FE1117D88A7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8E1648CC-25B9-6D44-9F30-9FE1117D88A7}.Debug|Win32.Build.0 = Debug|Win32
+		{8E1648CC-25B9-6D44-9F30-9FE1117D88A7}.Release|Win32.ActiveCfg = Release|Win32
+		{8E1648CC-25B9-6D44-9F30-9FE1117D88A7}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,17 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\intrusive\dicpp_module.cpp" />
-    <ClCompile Include="..\common\implementations\json_decoder.cpp" />
-    <ClCompile Include="..\common\implementations\key_renderer.cpp" />
-    <ClCompile Include="..\intrusive\sauce_decoder.cpp" />
-    <ClCompile Include="..\intrusive\sauce_renderer.cpp" />
-    <ClCompile Include="..\test_dicpp.cpp" />
-    <ClCompile Include="..\test_hypodermic.cpp" />
-    <ClCompile Include="..\test_pococapsule.cpp" />
-    <ClCompile Include="..\test_sauce.cpp" />
-    <ClCompile Include="..\test_wallaroo.cpp" />
-    <ClCompile Include="..\intrusive\wallaroo_jsondecoder.cpp" />
-    <ClCompile Include="..\intrusive\wallaroo_render.cpp" />
+    <Filter Include="Sources">
+      <UniqueIdentifier>{EF1CE921-434D-1E45-9866-F579A2E03DC6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\test_dicpp.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test_hypodermic.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test_pococapsule.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test_sauce.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test_wallaroo.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\intrusive\dicpp_module.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\intrusive\sauce_decoder.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\intrusive\sauce_renderer.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\intrusive\wallaroo_jsondecoder.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\intrusive\wallaroo_render.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\implementations\json_decoder.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\implementations\key_renderer.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

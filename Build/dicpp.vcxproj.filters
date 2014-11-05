@@ -1,15 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\dicpp\lib\src\demangle.cpp" />
-    <ClCompile Include="..\dicpp\lib\src\empty.cpp" />
-    <ClCompile Include="..\dicpp\lib\src\injector.cpp" />
-    <ClCompile Include="..\dicpp\lib\src\scopes\no_scope.cpp" />
-    <ClCompile Include="..\dicpp\lib\src\registry.cpp" />
-    <ClCompile Include="..\dicpp\lib\src\scope.cpp" />
-    <ClCompile Include="..\dicpp\lib\src\scopes\singleton.cpp" />
-    <ClCompile Include="..\dicpp\lib\src\scopes\thread_local_singleton.cpp" />
-    <ClCompile Include="..\dicpp\lib\src\type_info.cpp" />
-    <ClCompile Include="..\dicpp\lib\src\type_provider.cpp" />
+    <Filter Include="Sources">
+      <UniqueIdentifier>{BCF363DF-2DE0-324C-9B8B-4EE4896C1A87}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\dicpp\lib\src\demangle.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\empty.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\injected_member.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\injector.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\registry.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\scope.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\type_info.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\type_provider.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\scopes\no_scope.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\scopes\singleton.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dicpp\lib\src\scopes\thread_local_singleton.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
