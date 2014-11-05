@@ -14,6 +14,8 @@ The frameworks currently aspiring:
  - [~~hypodermic~~](https://code.google.com/p/hypodermic) (currently doesn't build with clang-500.2.79 on MacOS)
  - [pococapsule](http://www.pocomatic.com/docs/whitepapers/pococapsule-cpp/)
  - [dicpp](https://bitbucket.org/cheez/dicpp/wiki/Home)
+ - [di](https://github.com/krzysztof-jusiak/di)
+ - [infectorpp](https://code.google.com/p/infectorpp/)
 
 Build files are generated using the convenience wrapper for [premake](http://industriousone.com/premake) - [premake-meta-cpp](https://github.com/d-led/premake-meta-cpp)
 
