@@ -13,10 +13,19 @@ local settings = {
         },
         libdirs = {
         		linux = {},
-        		windows = {},
+        		windows = {
+        			path.join( os.getenv 'BOOST', 'lib32-msvc-11.0' )
+        		},
         		macosx = {
         			'/usr/local/lib'
         		}
+    	},
+    	includedirs = {
+    			linux = {},
+    			windows = {
+    				os.getenv 'BOOST'
+    			},
+    			macosx = {}
     	}
 }
 
@@ -27,7 +36,8 @@ includedirs {
 	'./wallaroo',
 	'./PocoCapsule/include',
 	'./picojson',
-	'./dicpp/include'
+	'./dicpp/include',
+	settings.includedirs[OS]
 }
 
 make_static_lib("googlemock", {"./googlemock/fused-src/gmock-gtest-all.cc"} )
