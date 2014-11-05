@@ -25,7 +25,9 @@ local settings = {
     			windows = {
     				os.getenv 'BOOST'
     			},
-    			macosx = {}
+    			macosx = {
+                    '/usr/local/include'
+                }
     	}
 }
 
@@ -45,9 +47,10 @@ make_static_lib("googlemock", {"./googlemock/fused-src/gmock-gtest-all.cc"} )
 make_static_lib("googlemock-main", {"./googlemock/fused-src/gmock_main.cc"} )
 
 make_static_lib("dicpp", {"./dicpp/lib/src/**.cpp"} )
-make_static_lib("hypodermic", {"./hypodermic/Hypodermic/**.cpp"} )
-
 make_cpp11()
+
+-- make_static_lib("hypodermic", {"./hypodermic/Hypodermic/**.cpp"} )
+-- make_cpp11()
 
 make_console_app('test_ioc_cpp',
 	{
@@ -61,7 +64,7 @@ links {
 	'googlemock',
 	'googlemock-main',
 	'dicpp',
-	'hypodermic',
+	-- 'hypodermic',
 	settings.links[OS]
 }
 
