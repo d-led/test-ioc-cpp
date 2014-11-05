@@ -10,7 +10,14 @@ local settings = {
                 linux = { 'boost_system' },
                 windows = { },
                 macosx = { 'boost_system' }
-        }
+        },
+        libdirs = {
+        		linux = {},
+        		windows = {},
+        		macosx = {
+        			'/usr/local/lib'
+        		}
+    	}
 }
 
 includedirs {
@@ -44,6 +51,10 @@ links {
 	'googlemock-main',
 	'dicpp',
 	settings.links[OS]
+}
+
+libdirs {
+	settings.libdirs[OS]
 }
 
 defines {

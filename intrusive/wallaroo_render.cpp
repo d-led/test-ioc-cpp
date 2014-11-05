@@ -5,11 +5,11 @@
 #include "../common/implementations/key_renderer.h"
 
 #include <wallaroo/registered.h>
-#include <wallaroo/plug.h>
+#include <wallaroo/part.h>
 
 #include <sstream>
 
-class WallarooKeyRenderer :  public wallaroo::Device , public IRender {
+class WallarooKeyRenderer :  public wallaroo::Part , public IRender {
 public:
 	 WallarooKeyRenderer():
 		model( "model", RegistrationToken() )

@@ -6,8 +6,10 @@
 #include "../common/implementations/json_decoder.h"
 
 #include <wallaroo/catalog.h>
-#include <wallaroo/device.h>
-#include <wallaroo/plug.h>
+#include <wallaroo/collaborator.h>
+#include <wallaroo/part.h>
+#include <wallaroo/registered.h>
+
 #include <iostream>
 
 class WallarooJsonDecoder : public IGetKeyValue, public wallaroo::Device {
@@ -58,7 +60,7 @@ private:
 	}
 
 private:
- 	wallaroo::Plug< IModel > data_source;
+ 	wallaroo::Collaborator< IModel > data_source;
  	
  	// cached values
  	std::shared_ptr< IModel > last_model;

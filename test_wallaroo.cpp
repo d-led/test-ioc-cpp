@@ -1,5 +1,5 @@
 #include <wallaroo/catalog.h>
-#include <wallaroo/device.h>
+#include <wallaroo/registered.h>
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
@@ -30,7 +30,7 @@ protected:
 };
 
 
-class MockKeyValue : public IGetKeyValue, public wallaroo::Device {
+class MockKeyValue : public IGetKeyValue, public wallaroo::Part {
 public:
 	MOCK_METHOD0(Count, size_t());
 	MOCK_METHOD1(GetKey, std::string(size_t pos));
@@ -38,7 +38,7 @@ public:
 };
 WALLAROO_REGISTER( MockKeyValue );
 
-class MockModel : public IModel, public wallaroo::Device {
+class MockModel : public IModel, public wallaroo::Part {
 public:
 	MOCK_METHOD0(Get, std::string());
 };
