@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8E1648CC-25B9-6D44-9F30-9FE1117D88A7}</ProjectGuid>
+    <ProjectGuid>{7510C650-4E68-CF44-BE61-4B3D205C2D37}</ProjectGuid>
     <RootNamespace>test_ioc_cpp</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
@@ -144,13 +144,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="googlemock.vcxproj">
-      <Project>{53D37460-D1FE-9A40-93EE-7CCE0080CAD3}</Project>
+      <Project>{27FB885E-D288-9642-AD64-FBBBC9F4E4B6}</Project>
     </ProjectReference>
     <ProjectReference Include="googlemock-main.vcxproj">
-      <Project>{85078396-63F5-5F45-989B-8E08DA584776}</Project>
+      <Project>{C20ECB37-33E4-354C-8F3C-8B23E92D51D1}</Project>
     </ProjectReference>
     <ProjectReference Include="dicpp.vcxproj">
-      <Project>{43098C18-428D-A640-95BB-67388DAABA0A}</Project>
+      <Project>{F3942D05-4D4F-BA41-BD66-7155E23F2DD7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="hypodermic.vcxproj">
+      <Project>{3D54FC77-D473-C74E-81EB-DC99710BCE8F}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

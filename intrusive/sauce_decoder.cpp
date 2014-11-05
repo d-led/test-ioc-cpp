@@ -8,25 +8,25 @@
 
 class SauceJsonDecoder : public IGetKeyValue {
 public:
-	 SauceJsonDecoder(std::shared_ptr< IModel > d):
-		pimpl( NewJsonDecoder(d) ) {
-	 }
+     SauceJsonDecoder(std::shared_ptr< IModel > d):
+        pimpl( NewJsonDecoder(d) ) {
+     }
 
 public:
-	virtual size_t Count()  {
-		return pimpl ? pimpl->Count() : 0;
-	}
+    virtual size_t Count()  {
+        return pimpl ? pimpl->Count() : 0;
+    }
 
-	virtual std::string GetKey(size_t pos) {
-		return pimpl ? pimpl->GetKey(pos) : "";
-	}
+    virtual std::string GetKey(size_t pos) {
+        return pimpl ? pimpl->GetKey(pos) : "";
+    }
 
-	virtual std::string GetValue(std::string const& key) {
-		return pimpl ? pimpl->GetValue(key) : "";
-	}
+    virtual std::string GetValue(std::string const& key) {
+        return pimpl ? pimpl->GetValue(key) : "";
+    }
 
 private:
- 	std::shared_ptr< IGetKeyValue > pimpl;
+    std::shared_ptr< IGetKeyValue > pimpl;
 };
 
 

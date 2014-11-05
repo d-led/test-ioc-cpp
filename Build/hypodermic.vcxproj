@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F3942D05-4D4F-BA41-BD66-7155E23F2DD7}</ProjectGuid>
-    <RootNamespace>dicpp</RootNamespace>
+    <ProjectGuid>{3D54FC77-D473-C74E-81EB-DC99710BCE8F}</ProjectGuid>
+    <RootNamespace>hypodermic</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,14 +40,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>..\windows\bin\Debug\</OutDir>
-    <IntDir>Debug\obj\Debug\dicpp\</IntDir>
-    <TargetName>dicpp</TargetName>
+    <IntDir>Debug\obj\Debug\hypodermic\</IntDir>
+    <TargetName>hypodermic</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>..\windows\bin\Release\</OutDir>
-    <IntDir>Release\obj\Release\dicpp\</IntDir>
-    <TargetName>dicpp</TargetName>
+    <IntDir>Release\obj\Release\hypodermic\</IntDir>
+    <TargetName>hypodermic</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -64,14 +64,14 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <ProgramDataBaseFileName>$(OutDir)dicpp.pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>$(OutDir)hypodermic.pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>DEBUG;_DEBUG;_VARIADIC_MAX=10;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Software\boost\boost_1_56_0;..\googlemock\fused-src;..\Hypodermic;..\sauce;..\wallaroo;..\PocoCapsule\include;..\picojson;..\dicpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)dicpp.lib</OutputFile>
+      <OutputFile>$(OutDir)hypodermic.lib</OutputFile>
     </Lib>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -99,7 +99,7 @@
       <AdditionalIncludeDirectories>D:\Software\boost\boost_1_56_0;..\googlemock\fused-src;..\Hypodermic;..\sauce;..\wallaroo;..\PocoCapsule\include;..\picojson;..\dicpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)dicpp.lib</OutputFile>
+      <OutputFile>$(OutDir)hypodermic.lib</OutputFile>
     </Lib>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -109,27 +109,55 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\dicpp\lib\src\demangle.cpp">
+    <ClCompile Include="..\hypodermic\Hypodermic\CircularDependencyDetector.cpp">
     </ClCompile>
-    <ClCompile Include="..\dicpp\lib\src\empty.cpp">
+    <ClCompile Include="..\hypodermic\Hypodermic\ComponentRegistration.cpp">
     </ClCompile>
-    <ClCompile Include="..\dicpp\lib\src\injected_member.cpp">
+    <ClCompile Include="..\hypodermic\Hypodermic\ComponentRegistrationLifetimeDecorator.cpp">
     </ClCompile>
-    <ClCompile Include="..\dicpp\lib\src\injector.cpp">
+    <ClCompile Include="..\hypodermic\Hypodermic\ComponentRegistry.cpp">
     </ClCompile>
-    <ClCompile Include="..\dicpp\lib\src\registry.cpp">
+    <ClCompile Include="..\hypodermic\Hypodermic\Container.cpp">
     </ClCompile>
-    <ClCompile Include="..\dicpp\lib\src\scope.cpp">
+    <ClCompile Include="..\hypodermic\Hypodermic\ContainerActivator.cpp">
     </ClCompile>
-    <ClCompile Include="..\dicpp\lib\src\type_info.cpp">
+    <ClCompile Include="..\hypodermic\Hypodermic\ContainerBuilder.cpp">
     </ClCompile>
-    <ClCompile Include="..\dicpp\lib\src\type_provider.cpp">
+    <ClCompile Include="..\hypodermic\Hypodermic\CopyOnWriteRegistry.cpp">
     </ClCompile>
-    <ClCompile Include="..\dicpp\lib\src\scopes\no_scope.cpp">
+    <ClCompile Include="..\hypodermic\Hypodermic\CurrentLifetimeScope.cpp">
     </ClCompile>
-    <ClCompile Include="..\dicpp\lib\src\scopes\singleton.cpp">
+    <ClCompile Include="..\hypodermic\Hypodermic\DependencyResolutionException.cpp">
     </ClCompile>
-    <ClCompile Include="..\dicpp\lib\src\scopes\thread_local_singleton.cpp">
+    <ClCompile Include="..\hypodermic\Hypodermic\ExternalRegistrySource.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\ForwardTypeCaster.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\InstanceActivator.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\InstanceLookup.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\KeyedService.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\LifetimeScope.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\MatchingScopeLifetime.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\RegistrationData.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\ResolveOperation.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\RootScopeLifetime.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\ScopeRestrictedRegistry.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\ServiceKey.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\ServiceRegistrationInfo.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\SingleRegistrationStyle.cpp">
+    </ClCompile>
+    <ClCompile Include="..\hypodermic\Hypodermic\TypedService.cpp">
     </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

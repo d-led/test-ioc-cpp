@@ -45,6 +45,7 @@ make_static_lib("googlemock", {"./googlemock/fused-src/gmock-gtest-all.cc"} )
 make_static_lib("googlemock-main", {"./googlemock/fused-src/gmock_main.cc"} )
 
 make_static_lib("dicpp", {"./dicpp/lib/src/**.cpp"} )
+make_static_lib("hypodermic", {"./hypodermic/Hypodermic/**.cpp"} )
 
 make_cpp11()
 
@@ -60,6 +61,7 @@ links {
 	'googlemock',
 	'googlemock-main',
 	'dicpp',
+	'hypodermic',
 	settings.links[OS]
 }
 

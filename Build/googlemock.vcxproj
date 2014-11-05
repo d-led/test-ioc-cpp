@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{53D37460-D1FE-9A40-93EE-7CCE0080CAD3}</ProjectGuid>
+    <ProjectGuid>{27FB885E-D288-9642-AD64-FBBBC9F4E4B6}</ProjectGuid>
     <RootNamespace>googlemock</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
