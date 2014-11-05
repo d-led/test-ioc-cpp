@@ -12,7 +12,7 @@
 
 #include <iostream>
 
-class WallarooJsonDecoder : public IGetKeyValue, public wallaroo::Device {
+class WallarooJsonDecoder : public IGetKeyValue, public wallaroo::Part {
 public:
 	 WallarooJsonDecoder():
 		data_source( "data_source", RegistrationToken() )
