@@ -1,0 +1,15 @@
+import path ;
+
+lib dicpp : [ path.glob-tree $(ROOT)/lib/src : *.cpp ]
+          : <include>$(ROOT)/include
+          :
+          : <include>$(ROOT)/include
+          ;
+
+unit-test dicpp_test
+          : [ path.glob-tree $(ROOT)/lib/tests : *.cpp ]
+            dicpp
+            ..//boost_test ..//boost_thread
+          ;
+
+build-project examples ;

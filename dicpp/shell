@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo -n -e "\033]0;DICPP Shell\007"
+export PS1="(DICPP) \h:\w \u$ "
+export BOOST_ROOT=${BOOST_ROOT-$PWD/../../boost}
+export PATH=$BOOST_ROOT/tools/jam/src/bin.macosxx86_64:$PATH
+$SHELL
+echo -n -e "\033]0;\007"

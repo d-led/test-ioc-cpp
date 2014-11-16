@@ -1,0 +1,6 @@
+import path ;
+
+exe stockquote
+          : [ path.glob-tree $(ROOT)/lib/examples/stockquote : *.cpp ]
+            ../..//dicpp ../../..//boost_system
+          ;

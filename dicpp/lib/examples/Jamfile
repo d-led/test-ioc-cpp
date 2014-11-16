@@ -1,0 +1,4 @@
+import path ;
+
+build-project stockquote ;
+build-project config ;

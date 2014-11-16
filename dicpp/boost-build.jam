@@ -1,0 +1,7 @@
+# Add --build-dir to command line so that boost Jamfiles pick it up and use this directory to build.
+
+ARGV += --build-dir=build ;
+
+BOOST_BUILD = $(BOOST_ROOT)/tools/build/v2 ;
+boost-build $(BOOST_BUILD) ;
+

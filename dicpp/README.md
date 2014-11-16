@@ -1,0 +1,1 @@
+[See the wiki](https://bitbucket.org/cheez/dicpp/wiki/Home)

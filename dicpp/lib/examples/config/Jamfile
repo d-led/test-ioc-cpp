@@ -1,0 +1,6 @@
+import path ;
+
+exe config
+          : [ path.glob-tree $(ROOT)/lib/examples/config : *.cpp ]
+          ../..//dicpp ../../..//boost_system ../../..//boost_serialization ../../..//boost_thread
+          ;

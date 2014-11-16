@@ -1,0 +1,30 @@
+This example demos a small application which benefits from dependency
+injection to reduce the complexity and tedium of gluing objects together.
+
+This application shows:
+ - You no longer need to manually glue objects together
+
+ - Factories are sometimes still the best solution, especially when
+   dealing with user input. However, you can still use the convenience
+   of dependency injection for factories via providers
+
+ - You only need to register a few root objects to get automatic
+   construction for the remainder
+
+To see where dependency injection is useful, the following exercises,
+increasing in complexity,  may be useful:
+
+ - Add a new StockQuoteService and add it to
+   StaticStockQuoteServiceFactory following the current pattern.
+
+ - The YahooStockQuoteService is not very testable. Make it more
+   testable by creating a HttpDownloadService... Ok, I already did
+   this but it was bugging me. So you can just look at it or feel free
+   to improve it!
+
+ - Add logging by creating a logging class and using it in all objects
+
+ - Write a test module and test StockQuoteApp::execute
+
+ - Modify the HttpDownloadService to be constructed on a thread-local basis
+

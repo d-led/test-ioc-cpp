@@ -1,0 +1,67 @@
+import feature ;
+import toolset ;
+import os ;
+
+feature.feature no-long-long : on off : optional composite propagated ;
+feature.compose <no-long-long>on : <cflags>-Wno-long-long ;
+
+local BOOST_ROOT = [ os.environ BOOST_ROOT ] ;
+
+if [ os.name ] = "NT"
+{
+        using msvc : 8.0 ;
+}
+
+path-constant ROOT : . ;
+
+project dicpp
+        : requirements
+          <threading>multi
+          <link>static
+
+          <warnings>all
+          <warnings-as-errors>on
+          <include>$(BOOST_ROOT)
+          <define>BOOST_ALL_NO_LIB
+
+          [ conditional <toolset>darwin :
+            # <linkflags>-finstrument-functions
+            # <linkflags>-lSaturn
+            # <cxxflags>-finstrument-functions
+            <no-long-long>on
+            <architecture>x86
+            <address-model>32
+            <macosx-version>10.5 ]
+
+          [ conditional <toolset>msvc :
+            <warnings>on
+            <cxxflags>/wd4180 # Const qualified applied has no effect
+          ]
+
+        : default-build release #debug
+        : build-dir build
+        ;
+
+use-project /boost : $(BOOST_ROOT) ;
+
+alias boost_test
+      : /boost/test//boost_unit_test_framework
+      : <link>static <warnings-as-errors>off
+      ;
+
+alias boost_thread
+      : /boost/thread//boost_thread
+      : <link>static <warnings-as-errors>off
+      ;
+
+alias boost_system
+      : /boost/system//boost_system
+      : <link>static <warnings-as-errors>off
+      ;
+
+alias boost_serialization
+      : /boost/serialization//boost_serialization
+      : <link>static <warnings-as-errors>off
+      ;
+
+build-project lib ;

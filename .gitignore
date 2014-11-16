@@ -110,4 +110,4 @@ packages/
 #my
 
 tmp_build
-/dicpp
+/dicpp/.hg
