@@ -16,6 +16,7 @@ The frameworks currently aspiring:
  - [dicpp](https://bitbucket.org/cheez/dicpp/wiki/Home)
  - [di](https://github.com/krzysztof-jusiak/di)
  - [infectorpp](https://code.google.com/p/infectorpp/)
+ - [fruit](https://github.com/google/fruit)
 
 Build files are generated using the convenience wrapper for [premake](http://industriousone.com/premake) - [premake-meta-cpp](https://github.com/d-led/premake-meta-cpp)
 
