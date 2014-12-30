@@ -4,7 +4,16 @@ assert( require 'premake.quickstart' )
 
 make_solution 'test_ioc_cpp'
 
-defines 'GTEST_USE_OWN_TR1_TUPLE=1'
+configuration { "vs*" }
+	defines '_VARIADIC_MAX=10'
+	buildoptions {
+		"/bigobj"
+	}
+
+configuration { "macosx" }
+	defines 'GTEST_USE_OWN_TR1_TUPLE=1'
+
+configuration'*' --reset
 
 platforms 'native'
 
