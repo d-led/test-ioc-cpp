@@ -24,7 +24,7 @@ ifeq ($(config),debug32)
   TARGETDIR  = ../../../bin/linux/gmake/x32/Debug
   TARGET     = $(TARGETDIR)/libdicpp.a
   DEFINES   += -DDEBUG -D_DEBUG
-  INCLUDES  += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include
+  INCLUDES  += -I../../../deps/googlemock/fused-src -I../../../deps/Hypodermic -I../../../deps/sauce -I../../../deps/wallaroo -I../../../deps/PocoCapsule/include -I../../../deps/picojson -I../../../deps/dicpp/include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m32 -std=c++0x
   ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
@@ -46,7 +46,7 @@ ifeq ($(config),release32)
   TARGETDIR  = ../../../bin/linux/gmake/x32/Release
   TARGET     = $(TARGETDIR)/libdicpp.a
   DEFINES   += -DRELEASE
-  INCLUDES  += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include
+  INCLUDES  += -I../../../deps/googlemock/fused-src -I../../../deps/Hypodermic -I../../../deps/sauce -I../../../deps/wallaroo -I../../../deps/PocoCapsule/include -I../../../deps/picojson -I../../../deps/dicpp/include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O2 -m32 -std=c++0x
   ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
@@ -68,7 +68,7 @@ ifeq ($(config),debug64)
   TARGETDIR  = ../../../bin/linux/gmake/x64/Debug
   TARGET     = $(TARGETDIR)/libdicpp.a
   DEFINES   += -DDEBUG -D_DEBUG
-  INCLUDES  += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include
+  INCLUDES  += -I../../../deps/googlemock/fused-src -I../../../deps/Hypodermic -I../../../deps/sauce -I../../../deps/wallaroo -I../../../deps/PocoCapsule/include -I../../../deps/picojson -I../../../deps/dicpp/include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64 -std=c++0x
   ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
@@ -90,7 +90,7 @@ ifeq ($(config),release64)
   TARGETDIR  = ../../../bin/linux/gmake/x64/Release
   TARGET     = $(TARGETDIR)/libdicpp.a
   DEFINES   += -DRELEASE
-  INCLUDES  += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include
+  INCLUDES  += -I../../../deps/googlemock/fused-src -I../../../deps/Hypodermic -I../../../deps/sauce -I../../../deps/wallaroo -I../../../deps/PocoCapsule/include -I../../../deps/picojson -I../../../deps/dicpp/include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O2 -m64 -std=c++0x
   ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
@@ -112,7 +112,7 @@ ifeq ($(config),debug)
   TARGETDIR  = ../../../bin/linux/gmake
   TARGET     = $(TARGETDIR)/libdicpp.a
   DEFINES   += -DDEBUG -D_DEBUG
-  INCLUDES  += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include
+  INCLUDES  += -I../../../deps/googlemock/fused-src -I../../../deps/Hypodermic -I../../../deps/sauce -I../../../deps/wallaroo -I../../../deps/PocoCapsule/include -I../../../deps/picojson -I../../../deps/dicpp/include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -std=c++0x
   ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
@@ -134,7 +134,7 @@ ifeq ($(config),release)
   TARGETDIR  = ../../../bin/linux/gmake
   TARGET     = $(TARGETDIR)/libdicpp.a
   DEFINES   += -DRELEASE
-  INCLUDES  += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include
+  INCLUDES  += -I../../../deps/googlemock/fused-src -I../../../deps/Hypodermic -I../../../deps/sauce -I../../../deps/wallaroo -I../../../deps/PocoCapsule/include -I../../../deps/picojson -I../../../deps/dicpp/include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O2 -std=c++0x
   ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
@@ -222,47 +222,47 @@ $(GCH): $(PCH)
 	$(SILENT) $(CXX) -x c++-header $(ALL_CXXFLAGS) -MMD -MP $(DEFINES) $(INCLUDES) -o "$@" -MF "$(@:%.gch=%.d)" -c "$<"
 endif
 
-$(OBJDIR)/type_info.o: ../../../dicpp/lib/src/type_info.cpp
+$(OBJDIR)/type_info.o: ../../../deps/dicpp/lib/src/type_info.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 
-$(OBJDIR)/injected_member.o: ../../../dicpp/lib/src/injected_member.cpp
+$(OBJDIR)/injected_member.o: ../../../deps/dicpp/lib/src/injected_member.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 
-$(OBJDIR)/empty.o: ../../../dicpp/lib/src/empty.cpp
+$(OBJDIR)/empty.o: ../../../deps/dicpp/lib/src/empty.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 
-$(OBJDIR)/type_provider.o: ../../../dicpp/lib/src/type_provider.cpp
+$(OBJDIR)/type_provider.o: ../../../deps/dicpp/lib/src/type_provider.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 
-$(OBJDIR)/scope.o: ../../../dicpp/lib/src/scope.cpp
+$(OBJDIR)/scope.o: ../../../deps/dicpp/lib/src/scope.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 
-$(OBJDIR)/injector.o: ../../../dicpp/lib/src/injector.cpp
+$(OBJDIR)/injector.o: ../../../deps/dicpp/lib/src/injector.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 
-$(OBJDIR)/demangle.o: ../../../dicpp/lib/src/demangle.cpp
+$(OBJDIR)/demangle.o: ../../../deps/dicpp/lib/src/demangle.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 
-$(OBJDIR)/registry.o: ../../../dicpp/lib/src/registry.cpp
+$(OBJDIR)/registry.o: ../../../deps/dicpp/lib/src/registry.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 
-$(OBJDIR)/thread_local_singleton.o: ../../../dicpp/lib/src/scopes/thread_local_singleton.cpp
+$(OBJDIR)/thread_local_singleton.o: ../../../deps/dicpp/lib/src/scopes/thread_local_singleton.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 
-$(OBJDIR)/singleton.o: ../../../dicpp/lib/src/scopes/singleton.cpp
+$(OBJDIR)/singleton.o: ../../../deps/dicpp/lib/src/scopes/singleton.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 
-$(OBJDIR)/no_scope.o: ../../../dicpp/lib/src/scopes/no_scope.cpp
+$(OBJDIR)/no_scope.o: ../../../deps/dicpp/lib/src/scopes/no_scope.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF $(@:%.o=%.d) -c "$<"
 

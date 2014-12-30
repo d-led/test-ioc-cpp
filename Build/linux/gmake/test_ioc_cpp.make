@@ -24,7 +24,7 @@ ifeq ($(config),debug32)
   TARGETDIR  = ../../../bin/linux/gmake/x32/Debug
   TARGET     = $(TARGETDIR)/test_ioc_cpp
   DEFINES   += -DDEBUG -D_DEBUG
-  INCLUDES  += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include
+  INCLUDES  += -I../../../deps/googlemock/fused-src -I../../../deps/Hypodermic -I../../../deps/sauce -I../../../deps/wallaroo -I../../../deps/PocoCapsule/include -I../../../deps/picojson -I../../../deps/dicpp/include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m32 -std=c++0x
   ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
@@ -48,7 +48,7 @@ ifeq ($(config),release32)
   TARGETDIR  = ../../../bin/linux/gmake/x32/Release
   TARGET     = $(TARGETDIR)/test_ioc_cpp
   DEFINES   += -DRELEASE
-  INCLUDES  += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include
+  INCLUDES  += -I../../../deps/googlemock/fused-src -I../../../deps/Hypodermic -I../../../deps/sauce -I../../../deps/wallaroo -I../../../deps/PocoCapsule/include -I../../../deps/picojson -I../../../deps/dicpp/include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O2 -m32 -std=c++0x
   ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
@@ -72,7 +72,7 @@ ifeq ($(config),debug64)
   TARGETDIR  = ../../../bin/linux/gmake/x64/Debug
   TARGET     = $(TARGETDIR)/test_ioc_cpp
   DEFINES   += -DDEBUG -D_DEBUG
-  INCLUDES  += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include
+  INCLUDES  += -I../../../deps/googlemock/fused-src -I../../../deps/Hypodermic -I../../../deps/sauce -I../../../deps/wallaroo -I../../../deps/PocoCapsule/include -I../../../deps/picojson -I../../../deps/dicpp/include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64 -std=c++0x
   ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
@@ -96,7 +96,7 @@ ifeq ($(config),release64)
   TARGETDIR  = ../../../bin/linux/gmake/x64/Release
   TARGET     = $(TARGETDIR)/test_ioc_cpp
   DEFINES   += -DRELEASE
-  INCLUDES  += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include
+  INCLUDES  += -I../../../deps/googlemock/fused-src -I../../../deps/Hypodermic -I../../../deps/sauce -I../../../deps/wallaroo -I../../../deps/PocoCapsule/include -I../../../deps/picojson -I../../../deps/dicpp/include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O2 -m64 -std=c++0x
   ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
@@ -120,7 +120,7 @@ ifeq ($(config),debug)
   TARGETDIR  = ../../../bin/linux/gmake
   TARGET     = $(TARGETDIR)/test_ioc_cpp
   DEFINES   += -DDEBUG -D_DEBUG
-  INCLUDES  += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include
+  INCLUDES  += -I../../../deps/googlemock/fused-src -I../../../deps/Hypodermic -I../../../deps/sauce -I../../../deps/wallaroo -I../../../deps/PocoCapsule/include -I../../../deps/picojson -I../../../deps/dicpp/include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -std=c++0x
   ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
@@ -144,7 +144,7 @@ ifeq ($(config),release)
   TARGETDIR  = ../../../bin/linux/gmake
   TARGET     = $(TARGETDIR)/test_ioc_cpp
   DEFINES   += -DRELEASE
-  INCLUDES  += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include
+  INCLUDES  += -I../../../deps/googlemock/fused-src -I../../../deps/Hypodermic -I../../../deps/sauce -I../../../deps/wallaroo -I../../../deps/PocoCapsule/include -I../../../deps/picojson -I../../../deps/dicpp/include
   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O2 -std=c++0x
   ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
