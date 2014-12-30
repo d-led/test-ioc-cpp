@@ -18,7 +18,7 @@ platforms 'native'
 local OS = os.get()
 local settings = {
         links = {
-                linux = { 'boost_system' },
+                linux = { 'boost_system', 'pthread' },
                 windows = { },
                 macosx = { 'boost_system' }
         },
