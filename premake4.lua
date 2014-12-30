@@ -4,6 +4,10 @@ assert( require 'premake.quickstart' )
 
 make_solution 'test_ioc_cpp'
 
+defines 'GTEST_USE_OWN_TR1_TUPLE=1'
+
+platforms 'native'
+
 local OS = os.get()
 local settings = {
         links = {
@@ -43,8 +47,10 @@ includedirs {
 }
 
 make_static_lib("googlemock", {"./googlemock/fused-src/gmock-gtest-all.cc"} )
+make_cpp11()
 
 make_static_lib("googlemock-main", {"./googlemock/fused-src/gmock_main.cc"} )
+make_cpp11()
 
 make_static_lib("dicpp", {"./dicpp/lib/src/**.cpp"} )
 make_cpp11()

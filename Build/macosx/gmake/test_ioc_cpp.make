@@ -15,7 +15,7 @@ ifeq ($(config),debug_x32)
   TARGETDIR = ../../../bin/macosx/gmake/x32/Debug
   TARGET = $(TARGETDIR)/test_ioc_cpp
   OBJDIR = ../../../obj/macosx/gmake/x32/Debug/test_ioc_cpp
-  DEFINES += -DDEBUG -D_DEBUG
+  DEFINES += -DGTEST_USE_OWN_TR1_TUPLE=1 -DDEBUG -D_DEBUG
   INCLUDES += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include -I/usr/local/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
@@ -44,7 +44,7 @@ ifeq ($(config),debug_x64)
   TARGETDIR = ../../../bin/macosx/gmake/x64/Debug
   TARGET = $(TARGETDIR)/test_ioc_cpp
   OBJDIR = ../../../obj/macosx/gmake/x64/Debug/test_ioc_cpp
-  DEFINES += -DDEBUG -D_DEBUG
+  DEFINES += -DGTEST_USE_OWN_TR1_TUPLE=1 -DDEBUG -D_DEBUG
   INCLUDES += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include -I/usr/local/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
@@ -68,12 +68,41 @@ all: $(TARGETDIR) $(OBJDIR) prebuild prelink $(TARGET)
 
 endif
 
+ifeq ($(config),debug_native)
+  RESCOMP = windres
+  TARGETDIR = ../../../bin/macosx/gmake/native/Debug
+  TARGET = $(TARGETDIR)/test_ioc_cpp
+  OBJDIR = ../../../obj/macosx/gmake/native/Debug/test_ioc_cpp
+  DEFINES += -DGTEST_USE_OWN_TR1_TUPLE=1 -DDEBUG -D_DEBUG
+  INCLUDES += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include -I/usr/local/include
+  FORCE_INCLUDE +=
+  ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -g -std=c++11
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CFLAGS)
+  ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
+  LIBS += ../../../bin/macosx/gmake/native/Debug/libgooglemock.a ../../../bin/macosx/gmake/native/Debug/libgooglemock-main.a ../../../bin/macosx/gmake/native/Debug/libdicpp.a -lboost_system
+  LDDEPS += ../../../bin/macosx/gmake/native/Debug/libgooglemock.a ../../../bin/macosx/gmake/native/Debug/libgooglemock-main.a ../../../bin/macosx/gmake/native/Debug/libdicpp.a
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/local/lib
+  LINKCMD = $(CXX) -o $(TARGET) $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
+  define PREBUILDCMDS
+  endef
+  define PRELINKCMDS
+  endef
+  define POSTBUILDCMDS
+	@echo Running postbuild commands
+	$(TARGET)
+  endef
+all: $(TARGETDIR) $(OBJDIR) prebuild prelink $(TARGET)
+	@:
+
+endif
+
 ifeq ($(config),release_x32)
   RESCOMP = windres
   TARGETDIR = ../../../bin/macosx/gmake/x32/Release
   TARGET = $(TARGETDIR)/test_ioc_cpp
   OBJDIR = ../../../obj/macosx/gmake/x32/Release/test_ioc_cpp
-  DEFINES += -DRELEASE
+  DEFINES += -DGTEST_USE_OWN_TR1_TUPLE=1 -DRELEASE
   INCLUDES += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include -I/usr/local/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
@@ -102,7 +131,7 @@ ifeq ($(config),release_x64)
   TARGETDIR = ../../../bin/macosx/gmake/x64/Release
   TARGET = $(TARGETDIR)/test_ioc_cpp
   OBJDIR = ../../../obj/macosx/gmake/x64/Release/test_ioc_cpp
-  DEFINES += -DRELEASE
+  DEFINES += -DGTEST_USE_OWN_TR1_TUPLE=1 -DRELEASE
   INCLUDES += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include -I/usr/local/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
@@ -112,6 +141,35 @@ ifeq ($(config),release_x64)
   LIBS += ../../../bin/macosx/gmake/x64/Release/libgooglemock.a ../../../bin/macosx/gmake/x64/Release/libgooglemock-main.a ../../../bin/macosx/gmake/x64/Release/libdicpp.a -lboost_system
   LDDEPS += ../../../bin/macosx/gmake/x64/Release/libgooglemock.a ../../../bin/macosx/gmake/x64/Release/libgooglemock-main.a ../../../bin/macosx/gmake/x64/Release/libdicpp.a
   ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -L/usr/local/lib -Wl,-x -m64
+  LINKCMD = $(CXX) -o $(TARGET) $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
+  define PREBUILDCMDS
+  endef
+  define PRELINKCMDS
+  endef
+  define POSTBUILDCMDS
+	@echo Running postbuild commands
+	$(TARGET)
+  endef
+all: $(TARGETDIR) $(OBJDIR) prebuild prelink $(TARGET)
+	@:
+
+endif
+
+ifeq ($(config),release_native)
+  RESCOMP = windres
+  TARGETDIR = ../../../bin/macosx/gmake/native/Release
+  TARGET = $(TARGETDIR)/test_ioc_cpp
+  OBJDIR = ../../../obj/macosx/gmake/native/Release/test_ioc_cpp
+  DEFINES += -DGTEST_USE_OWN_TR1_TUPLE=1 -DRELEASE
+  INCLUDES += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include -I/usr/local/include
+  FORCE_INCLUDE +=
+  ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -O2 -std=c++11
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CFLAGS)
+  ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
+  LIBS += ../../../bin/macosx/gmake/native/Release/libgooglemock.a ../../../bin/macosx/gmake/native/Release/libgooglemock-main.a ../../../bin/macosx/gmake/native/Release/libdicpp.a -lboost_system
+  LDDEPS += ../../../bin/macosx/gmake/native/Release/libgooglemock.a ../../../bin/macosx/gmake/native/Release/libgooglemock-main.a ../../../bin/macosx/gmake/native/Release/libdicpp.a
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/local/lib -Wl,-x
   LINKCMD = $(CXX) -o $(TARGET) $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
   define PREBUILDCMDS
   endef

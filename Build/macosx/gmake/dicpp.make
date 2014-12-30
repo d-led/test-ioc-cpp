@@ -15,7 +15,7 @@ ifeq ($(config),debug_x32)
   TARGETDIR = ../../../bin/macosx/gmake/x32/Debug
   TARGET = $(TARGETDIR)/libdicpp.a
   OBJDIR = ../../../obj/macosx/gmake/x32/Debug/dicpp
-  DEFINES += -DDEBUG -D_DEBUG
+  DEFINES += -DGTEST_USE_OWN_TR1_TUPLE=1 -DDEBUG -D_DEBUG
   INCLUDES += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include -I/usr/local/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
@@ -42,7 +42,7 @@ ifeq ($(config),debug_x64)
   TARGETDIR = ../../../bin/macosx/gmake/x64/Debug
   TARGET = $(TARGETDIR)/libdicpp.a
   OBJDIR = ../../../obj/macosx/gmake/x64/Debug/dicpp
-  DEFINES += -DDEBUG -D_DEBUG
+  DEFINES += -DGTEST_USE_OWN_TR1_TUPLE=1 -DDEBUG -D_DEBUG
   INCLUDES += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include -I/usr/local/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
@@ -64,12 +64,39 @@ all: $(TARGETDIR) $(OBJDIR) prebuild prelink $(TARGET)
 
 endif
 
+ifeq ($(config),debug_native)
+  RESCOMP = windres
+  TARGETDIR = ../../../bin/macosx/gmake/native/Debug
+  TARGET = $(TARGETDIR)/libdicpp.a
+  OBJDIR = ../../../obj/macosx/gmake/native/Debug/dicpp
+  DEFINES += -DGTEST_USE_OWN_TR1_TUPLE=1 -DDEBUG -D_DEBUG
+  INCLUDES += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include -I/usr/local/include
+  FORCE_INCLUDE +=
+  ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -g -std=c++11
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CFLAGS)
+  ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
+  LIBS +=
+  LDDEPS +=
+  ALL_LDFLAGS += $(LDFLAGS)
+  LINKCMD = $(AR) -rcs $(TARGET) $(OBJECTS)
+  define PREBUILDCMDS
+  endef
+  define PRELINKCMDS
+  endef
+  define POSTBUILDCMDS
+  endef
+all: $(TARGETDIR) $(OBJDIR) prebuild prelink $(TARGET)
+	@:
+
+endif
+
 ifeq ($(config),release_x32)
   RESCOMP = windres
   TARGETDIR = ../../../bin/macosx/gmake/x32/Release
   TARGET = $(TARGETDIR)/libdicpp.a
   OBJDIR = ../../../obj/macosx/gmake/x32/Release/dicpp
-  DEFINES += -DRELEASE
+  DEFINES += -DGTEST_USE_OWN_TR1_TUPLE=1 -DRELEASE
   INCLUDES += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include -I/usr/local/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
@@ -96,7 +123,7 @@ ifeq ($(config),release_x64)
   TARGETDIR = ../../../bin/macosx/gmake/x64/Release
   TARGET = $(TARGETDIR)/libdicpp.a
   OBJDIR = ../../../obj/macosx/gmake/x64/Release/dicpp
-  DEFINES += -DRELEASE
+  DEFINES += -DGTEST_USE_OWN_TR1_TUPLE=1 -DRELEASE
   INCLUDES += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include -I/usr/local/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
@@ -106,6 +133,33 @@ ifeq ($(config),release_x64)
   LIBS +=
   LDDEPS +=
   ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -Wl,-x -m64
+  LINKCMD = $(AR) -rcs $(TARGET) $(OBJECTS)
+  define PREBUILDCMDS
+  endef
+  define PRELINKCMDS
+  endef
+  define POSTBUILDCMDS
+  endef
+all: $(TARGETDIR) $(OBJDIR) prebuild prelink $(TARGET)
+	@:
+
+endif
+
+ifeq ($(config),release_native)
+  RESCOMP = windres
+  TARGETDIR = ../../../bin/macosx/gmake/native/Release
+  TARGET = $(TARGETDIR)/libdicpp.a
+  OBJDIR = ../../../obj/macosx/gmake/native/Release/dicpp
+  DEFINES += -DGTEST_USE_OWN_TR1_TUPLE=1 -DRELEASE
+  INCLUDES += -I../../../googlemock/fused-src -I../../../Hypodermic -I../../../sauce -I../../../wallaroo -I../../../PocoCapsule/include -I../../../picojson -I../../../dicpp/include -I/usr/local/include
+  FORCE_INCLUDE +=
+  ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -O2 -std=c++11
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CFLAGS)
+  ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
+  LIBS +=
+  LDDEPS +=
+  ALL_LDFLAGS += $(LDFLAGS) -Wl,-x
   LINKCMD = $(AR) -rcs $(TARGET) $(OBJECTS)
   define PREBUILDCMDS
   endef

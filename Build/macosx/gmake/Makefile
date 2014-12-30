@@ -22,6 +22,12 @@ ifeq ($(config),debug_x64)
   dicpp_config = debug_x64
   test_ioc_cpp_config = debug_x64
 endif
+ifeq ($(config),debug_native)
+  googlemock_config = debug_native
+  googlemock_main_config = debug_native
+  dicpp_config = debug_native
+  test_ioc_cpp_config = debug_native
+endif
 ifeq ($(config),release_x32)
   googlemock_config = release_x32
   googlemock_main_config = release_x32
@@ -33,6 +39,12 @@ ifeq ($(config),release_x64)
   googlemock_main_config = release_x64
   dicpp_config = release_x64
   test_ioc_cpp_config = release_x64
+endif
+ifeq ($(config),release_native)
+  googlemock_config = release_native
+  googlemock_main_config = release_native
+  dicpp_config = release_native
+  test_ioc_cpp_config = release_native
 endif
 
 PROJECTS := googlemock googlemock-main dicpp test_ioc_cpp
@@ -77,8 +89,10 @@ help:
 	@echo "CONFIGURATIONS:"
 	@echo "  debug_x32"
 	@echo "  debug_x64"
+	@echo "  debug_native"
 	@echo "  release_x32"
 	@echo "  release_x64"
+	@echo "  release_native"
 	@echo ""
 	@echo "TARGETS:"
 	@echo "   all (default)"
