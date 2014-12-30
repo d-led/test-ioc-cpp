@@ -54,16 +54,16 @@ includedirs {
 }
 
 make_static_lib("googlemock", {"./googlemock/fused-src/gmock-gtest-all.cc"} )
-make_cpp11()
+use_standard 'c++0x'
 
 make_static_lib("googlemock-main", {"./googlemock/fused-src/gmock_main.cc"} )
-make_cpp11()
+use_standard 'c++0x'
 
 make_static_lib("dicpp", {"./dicpp/lib/src/**.cpp"} )
-make_cpp11()
+use_standard 'c++0x'
 
 -- make_static_lib("hypodermic", {"./hypodermic/Hypodermic/**.cpp"} )
--- make_cpp11()
+-- use_standard 'c++0x'
 
 make_console_app('test_ioc_cpp',
 	{
@@ -89,7 +89,7 @@ defines {
 	-- 'DI_DISABLE_LOGGING'
 }
 
-make_cpp11()
+use_standard 'c++0x'
 
 run_target_after_build()
 
