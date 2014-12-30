@@ -1,6 +1,4 @@
-_G.package.path=_G.package.path..[[;./?.lua;./?/?.lua]]
-
-assert( require 'premake.quickstart' )
+include 'premake'
 
 make_solution 'test_ioc_cpp'
 
