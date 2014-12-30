@@ -6,22 +6,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\dicpp\lib\src\demangle.cpp" />
-    <ClCompile Include="..\..\..\dicpp\lib\src\empty.cpp" />
-    <ClCompile Include="..\..\..\dicpp\lib\src\injected_member.cpp" />
-    <ClCompile Include="..\..\..\dicpp\lib\src\injector.cpp" />
-    <ClCompile Include="..\..\..\dicpp\lib\src\registry.cpp" />
-    <ClCompile Include="..\..\..\dicpp\lib\src\scope.cpp" />
-    <ClCompile Include="..\..\..\dicpp\lib\src\scopes\no_scope.cpp">
+    <ClCompile Include="..\..\..\deps\dicpp\lib\src\demangle.cpp" />
+    <ClCompile Include="..\..\..\deps\dicpp\lib\src\empty.cpp" />
+    <ClCompile Include="..\..\..\deps\dicpp\lib\src\injected_member.cpp" />
+    <ClCompile Include="..\..\..\deps\dicpp\lib\src\injector.cpp" />
+    <ClCompile Include="..\..\..\deps\dicpp\lib\src\registry.cpp" />
+    <ClCompile Include="..\..\..\deps\dicpp\lib\src\scope.cpp" />
+    <ClCompile Include="..\..\..\deps\dicpp\lib\src\scopes\no_scope.cpp">
       <Filter>scopes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\dicpp\lib\src\scopes\singleton.cpp">
+    <ClCompile Include="..\..\..\deps\dicpp\lib\src\scopes\singleton.cpp">
       <Filter>scopes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\dicpp\lib\src\scopes\thread_local_singleton.cpp">
+    <ClCompile Include="..\..\..\deps\dicpp\lib\src\scopes\thread_local_singleton.cpp">
       <Filter>scopes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\dicpp\lib\src\type_info.cpp" />
-    <ClCompile Include="..\..\..\dicpp\lib\src\type_provider.cpp" />
+    <ClCompile Include="..\..\..\deps\dicpp\lib\src\type_info.cpp" />
+    <ClCompile Include="..\..\..\deps\dicpp\lib\src\type_provider.cpp" />
   </ItemGroup>
 </Project>

@@ -140,14 +140,14 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_VARIADIC_MAX=10;DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\googlemock\fused-src;..\..\..\Hypodermic;..\..\..\sauce;..\..\..\wallaroo;..\..\..\PocoCapsule\include;..\..\..\picojson;..\..\..\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\deps\googlemock\fused-src;..\..\..\deps\Hypodermic;..\..\..\deps\sauce;..\..\..\deps\wallaroo;..\..\..\deps\PocoCapsule\include;..\..\..\deps\picojson;..\..\..\deps\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_VARIADIC_MAX=10;DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\googlemock\fused-src;..\..\..\Hypodermic;..\..\..\sauce;..\..\..\wallaroo;..\..\..\PocoCapsule\include;..\..\..\picojson;..\..\..\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\deps\googlemock\fused-src;..\..\..\deps\Hypodermic;..\..\..\deps\sauce;..\..\..\deps\wallaroo;..\..\..\deps\PocoCapsule\include;..\..\..\deps\picojson;..\..\..\deps\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -159,14 +159,14 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_VARIADIC_MAX=10;DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\googlemock\fused-src;..\..\..\Hypodermic;..\..\..\sauce;..\..\..\wallaroo;..\..\..\PocoCapsule\include;..\..\..\picojson;..\..\..\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\deps\googlemock\fused-src;..\..\..\deps\Hypodermic;..\..\..\deps\sauce;..\..\..\deps\wallaroo;..\..\..\deps\PocoCapsule\include;..\..\..\deps\picojson;..\..\..\deps\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_VARIADIC_MAX=10;DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\googlemock\fused-src;..\..\..\Hypodermic;..\..\..\sauce;..\..\..\wallaroo;..\..\..\PocoCapsule\include;..\..\..\picojson;..\..\..\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\deps\googlemock\fused-src;..\..\..\deps\Hypodermic;..\..\..\deps\sauce;..\..\..\deps\wallaroo;..\..\..\deps\PocoCapsule\include;..\..\..\deps\picojson;..\..\..\deps\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -178,14 +178,14 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_VARIADIC_MAX=10;DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\googlemock\fused-src;..\..\..\Hypodermic;..\..\..\sauce;..\..\..\wallaroo;..\..\..\PocoCapsule\include;..\..\..\picojson;..\..\..\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\deps\googlemock\fused-src;..\..\..\deps\Hypodermic;..\..\..\deps\sauce;..\..\..\deps\wallaroo;..\..\..\deps\PocoCapsule\include;..\..\..\deps\picojson;..\..\..\deps\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_VARIADIC_MAX=10;DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\googlemock\fused-src;..\..\..\Hypodermic;..\..\..\sauce;..\..\..\wallaroo;..\..\..\PocoCapsule\include;..\..\..\picojson;..\..\..\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\deps\googlemock\fused-src;..\..\..\deps\Hypodermic;..\..\..\deps\sauce;..\..\..\deps\wallaroo;..\..\..\deps\PocoCapsule\include;..\..\..\deps\picojson;..\..\..\deps\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -197,7 +197,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_VARIADIC_MAX=10;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\googlemock\fused-src;..\..\..\Hypodermic;..\..\..\sauce;..\..\..\wallaroo;..\..\..\PocoCapsule\include;..\..\..\picojson;..\..\..\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\deps\googlemock\fused-src;..\..\..\deps\Hypodermic;..\..\..\deps\sauce;..\..\..\deps\wallaroo;..\..\..\deps\PocoCapsule\include;..\..\..\deps\picojson;..\..\..\deps\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -207,7 +207,7 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_VARIADIC_MAX=10;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\googlemock\fused-src;..\..\..\Hypodermic;..\..\..\sauce;..\..\..\wallaroo;..\..\..\PocoCapsule\include;..\..\..\picojson;..\..\..\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\deps\googlemock\fused-src;..\..\..\deps\Hypodermic;..\..\..\deps\sauce;..\..\..\deps\wallaroo;..\..\..\deps\PocoCapsule\include;..\..\..\deps\picojson;..\..\..\deps\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -221,7 +221,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_VARIADIC_MAX=10;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\googlemock\fused-src;..\..\..\Hypodermic;..\..\..\sauce;..\..\..\wallaroo;..\..\..\PocoCapsule\include;..\..\..\picojson;..\..\..\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\deps\googlemock\fused-src;..\..\..\deps\Hypodermic;..\..\..\deps\sauce;..\..\..\deps\wallaroo;..\..\..\deps\PocoCapsule\include;..\..\..\deps\picojson;..\..\..\deps\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -231,7 +231,7 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_VARIADIC_MAX=10;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\googlemock\fused-src;..\..\..\Hypodermic;..\..\..\sauce;..\..\..\wallaroo;..\..\..\PocoCapsule\include;..\..\..\picojson;..\..\..\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\deps\googlemock\fused-src;..\..\..\deps\Hypodermic;..\..\..\deps\sauce;..\..\..\deps\wallaroo;..\..\..\deps\PocoCapsule\include;..\..\..\deps\picojson;..\..\..\deps\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -245,7 +245,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_VARIADIC_MAX=10;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\googlemock\fused-src;..\..\..\Hypodermic;..\..\..\sauce;..\..\..\wallaroo;..\..\..\PocoCapsule\include;..\..\..\picojson;..\..\..\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\deps\googlemock\fused-src;..\..\..\deps\Hypodermic;..\..\..\deps\sauce;..\..\..\deps\wallaroo;..\..\..\deps\PocoCapsule\include;..\..\..\deps\picojson;..\..\..\deps\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -255,7 +255,7 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_VARIADIC_MAX=10;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\googlemock\fused-src;..\..\..\Hypodermic;..\..\..\sauce;..\..\..\wallaroo;..\..\..\PocoCapsule\include;..\..\..\picojson;..\..\..\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\deps\googlemock\fused-src;..\..\..\deps\Hypodermic;..\..\..\deps\sauce;..\..\..\deps\wallaroo;..\..\..\deps\PocoCapsule\include;..\..\..\deps\picojson;..\..\..\deps\dicpp\include;D:\Software\boost\boost_1_56_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -265,7 +265,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\googlemock\fused-src\gmock-gtest-all.cc" />
+    <ClCompile Include="..\..\..\deps\googlemock\fused-src\gmock-gtest-all.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

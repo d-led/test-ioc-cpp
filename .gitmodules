@@ -2,20 +2,20 @@
 	path = premake
 	url = https://github.com/d-led/premake-meta-cpp.git
 [submodule "hypodermic"]
-	path = hypodermic
+	path = deps/hypodermic
 	url = https://github.com/karolherbst/hypodermic.git
 [submodule "sauce"]
-	path = sauce
+	path = deps/sauce
 	url = https://github.com/phs/sauce.git
 [submodule "wallaroo"]
-	path = wallaroo
+	path = deps/wallaroo
 	url = https://code.google.com/p/wallaroo/
 [submodule "PocoCapsule"]
-	path = PocoCapsule
+	path = deps/PocoCapsule
 	url = https://github.com/shdwshard/PocoCapsule.git
 [submodule "googlemock"]
-	path = googlemock
+	path = deps/googlemock
 	url = https://github.com/ericsubach/googlemock.git
 [submodule "picojson"]
-	path = picojson
+	path = deps/picojson
 	url = https://github.com/kazuho/picojson.git

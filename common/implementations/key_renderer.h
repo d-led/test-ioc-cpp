@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../common/interfaces/irender.h"
-#include "../common/interfaces/igetkeyvalue.h"
+#include "../../common/interfaces/irender.h"
+#include "../../common/interfaces/igetkeyvalue.h"
 
 #include <memory>
 

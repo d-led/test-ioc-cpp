@@ -43,23 +43,23 @@ local settings = {
 }
 
 includedirs {
-	'./googlemock/fused-src',
-	'./Hypodermic',
-	'./sauce',
-	'./wallaroo',
-	'./PocoCapsule/include',
-	'./picojson',
-	'./dicpp/include',
+	'./deps/googlemock/fused-src',
+	'./deps/Hypodermic',
+	'./deps/sauce',
+	'./deps/wallaroo',
+	'./deps/PocoCapsule/include',
+	'./deps/picojson',
+	'./deps/dicpp/include',
 	settings.includedirs[OS]
 }
 
-make_static_lib("googlemock", {"./googlemock/fused-src/gmock-gtest-all.cc"} )
+make_static_lib("googlemock", {"./deps/googlemock/fused-src/gmock-gtest-all.cc"} )
 use_standard 'c++0x'
 
-make_static_lib("googlemock-main", {"./googlemock/fused-src/gmock_main.cc"} )
+make_static_lib("googlemock-main", {"./deps/googlemock/fused-src/gmock_main.cc"} )
 use_standard 'c++0x'
 
-make_static_lib("dicpp", {"./dicpp/lib/src/**.cpp"} )
+make_static_lib("dicpp", {"./deps/dicpp/lib/src/**.cpp"} )
 use_standard 'c++0x'
 
 -- make_static_lib("hypodermic", {"./hypodermic/Hypodermic/**.cpp"} )
