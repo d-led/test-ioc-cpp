@@ -1,15 +1,21 @@
 language: cpp
 
-before_install:
- - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
- - sudo add-apt-repository -y ppa:boost-latest/ppa
- - sudo apt-get update -qq
+sudo: false
 
-install:
- - sudo apt-get -qq install boost1.55 gcc-4.8 g++-4.8
+addons:
+  apt:
+    sources:
+      - boost-latest
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-5
+      - libboost1.55-all-dev
+
+cache:
+  - apt
 
 before_script:
- - export CXX="g++-4.8"
+ - export CXX="g++-5"
 
 script:
   - make -C Build/linux/gmake config=release
