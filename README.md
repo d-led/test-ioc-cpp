@@ -37,3 +37,11 @@ Blog
  - [Part 1, Wallaroo Introduction](http://ledentsov.de/2013/12/26/quest-for-a-cpp-dependency-injection-container-library-part-1-wallaroo-introduction/)
  - [Part 2, Some Sauce](http://ledentsov.de/2014/01/01/quest-for-dependency-injection-library-part2-some-sauce/)
  - [Part 3, Beginning dicpp](http://ledentsov.de/2014/01/02/cpp-dependency-injection-part3-dicpp-example/)
+
+TODOs
+-----
+
+### Frameworks
+
+ - [autowiring](https://github.com/leapmotion/autowiring)
+ - [Boost.DI](https://github.com/boost-experimental/di)
